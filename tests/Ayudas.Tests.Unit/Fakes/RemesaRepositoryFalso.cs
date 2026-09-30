@@ -11,10 +11,11 @@ public class RemesaRepositoryFalso : IRemesaRepository
     public Task<Remesa?> ObtenerConDetalleAsync(int id, CancellationToken ct = default) =>
         Task.FromResult(Remesas.FirstOrDefault(r => r.Id == id));
 
-    public Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, int pagina, int tamanoPagina, CancellationToken ct = default)
+    public Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, EstadoRemesa? estado, int pagina, int tamanoPagina, CancellationToken ct = default)
     {
         var filtradas = Remesas
             .Where(r => entidadId == null || r.EntidadLocalId == entidadId)
+            .Where(r => estado == null || r.Estado == estado)
             .OrderByDescending(r => r.FechaEnvio)
             .ThenBy(r => r.Id)
             .ToList();

@@ -55,14 +55,14 @@ public class RemesaService : IRemesaService
         };
     }
 
-    public Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, int pagina, CancellationToken ct = default)
+    public Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, EstadoRemesa? estado, int pagina, CancellationToken ct = default)
     {
         if (pagina < 1)
         {
             pagina = 1;
         }
 
-        return _remesas.ListarPaginadoAsync(entidadId, pagina, TamanoPagina, ct);
+        return _remesas.ListarPaginadoAsync(entidadId, estado, pagina, TamanoPagina, ct);
     }
 
     /// <summary>

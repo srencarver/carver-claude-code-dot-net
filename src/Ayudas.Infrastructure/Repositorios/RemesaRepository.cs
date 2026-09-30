@@ -23,13 +23,18 @@ public class RemesaRepository : IRemesaRepository
             .Include(r => r.Ayudas)
             .FirstOrDefaultAsync(r => r.Id == id, ct);
 
-    public async Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, int pagina, int tamanoPagina, CancellationToken ct = default)
+    public async Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, EstadoRemesa? estado, int pagina, int tamanoPagina, CancellationToken ct = default)
     {
         var consulta = _db.Remesas.AsNoTracking();
 
         if (entidadId.HasValue)
         {
             consulta = consulta.Where(r => r.EntidadLocalId == entidadId.Value);
+        }
+
+        if (estado.HasValue)
+        {
+            consulta = consulta.Where(r => r.Estado == estado.Value);
         }
 
         var total = await consulta.CountAsync(ct);

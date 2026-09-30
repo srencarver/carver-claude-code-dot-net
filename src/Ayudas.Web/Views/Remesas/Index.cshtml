@@ -15,6 +15,10 @@
             <option value="@e.Id" selected="@(e.Id == Model.EntidadId)">@e.Nombre</option>
         }
     </select>
+    <label asp-for="Estado"></label>
+    <select asp-for="Estado" asp-items="Html.GetEnumSelectList<EstadoRemesa>()">
+        <option value="">Todos</option>
+    </select>
     <button type="submit">Filtrar</button>
 </form>
 
@@ -57,7 +61,7 @@
         }
         else
         {
-            <a asp-action="Index" asp-route-pagina="@i" asp-route-entidadId="@Model.EntidadId">@i</a>
+            <a asp-action="Index" asp-route-pagina="@i" asp-route-entidadId="@Model.EntidadId" asp-route-estado="@Model.Estado">@i</a>
         }
     }
 </nav>

@@ -9,5 +9,5 @@ public interface IRemesaRepository
     Task<Remesa?> ObtenerConDetalleAsync(int id, CancellationToken ct = default);
 
     /// <summary>Página de remesas, de la más reciente a la más antigua, filtrada y proyectada en la base de datos.</summary>
-    Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, int pagina, int tamanoPagina, CancellationToken ct = default);
+    Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, EstadoRemesa? estado, int pagina, int tamanoPagina, CancellationToken ct = default);
 }

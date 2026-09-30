@@ -1,4 +1,5 @@
 using Ayudas.Application.Servicios;
+using Ayudas.Domain.Entidades;
 using Ayudas.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,12 +16,13 @@ public class RemesasController : Controller
         _entidades = entidades;
     }
 
-    public async Task<IActionResult> Index(int? entidadId, int pagina = 1, CancellationToken ct = default)
+    public async Task<IActionResult> Index(int? entidadId, EstadoRemesa? estado, int pagina = 1, CancellationToken ct = default)
     {
         var modelo = new RemesasIndexViewModel
         {
-            Resultado = await _remesas.ListarPaginadoAsync(entidadId, pagina, ct),
+            Resultado = await _remesas.ListarPaginadoAsync(entidadId, estado, pagina, ct),
             EntidadId = entidadId,
+            Estado = estado,
             Entidades = await _entidades.ListarAsync(ct)
         };
 
