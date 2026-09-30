@@ -427,3 +427,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Curso: secretos locales y datos reales, nunca en el repositorio
+secrets/
+muestras-reales/*
+!muestras-reales/LEEME.md

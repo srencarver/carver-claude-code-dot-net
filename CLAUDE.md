@@ -45,6 +45,11 @@ locales para cada convocatoria. Aplicación de formación: todos los datos son f
 - Contrato: `docs/ayudas.xsd` y `docs/especificacion-ayudas.pdf`. Las entidades no siempre lo cumplen.
 - Muestras sintéticas en `muestras/`: son la referencia de lo que llega de verdad.
 
+## Especificaciones
+
+- Los cambios medianos o grandes empiezan por una spec en `specs/NNN-nombre.md` con la plantilla `specs/_plantilla.md`.
+- Plan y tareas junto a la spec: `NNN-nombre.plan.md` y `NNN-nombre.tasks.md`. Un commit por tarea.
+
 ## No tocar
 
 - `src/Ayudas.Web/Legacy/`: módulo heredado sin mantenimiento. Se puede leer y documentar, no modificar.

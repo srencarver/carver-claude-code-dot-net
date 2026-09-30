@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100160</Referencia>
+    <NifEntidad>P2943300J</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>5</NumeroSolicitudes>
+    <ImporteTotal>7180.50</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>12345678Z</NifBeneficiario>
+      <NombreBeneficiario>Lucía Prueba Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>1250.00</ImporteSolicitado>
+      <FechaSolicitud>2026-05-04</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>92896666B</NifBeneficiario>
+      <NombreBeneficiario>Hugo Ensayo Modelo</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>980.50</ImporteSolicitado>
+      <FechaSolicitud>2026-05-06</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>92212606V</NifBeneficiario>
+      <NombreBeneficiario>Martina Simulado Patrón</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>2100.00</ImporteSolicitado>
+      <FechaSolicitud>2026-05-11</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>46491509E</NifBeneficiario>
+      <NombreBeneficiario>Daniel Muestra Borrador</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>1600.00</ImporteSolicitado>
+      <FechaSolicitud>2026-05-12</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>12.345.678-z</NifBeneficiario>
+      <NombreBeneficiario>Lucía Prueba Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>1250.00</ImporteSolicitado>
+      <FechaSolicitud>2026-05-04</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

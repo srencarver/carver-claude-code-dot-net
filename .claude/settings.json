@@ -1,4 +1,9 @@
 {
+  "permissions": {
+    "deny": [
+      "Read(./muestras-reales/**)"
+    ]
+  },
   "hooks": {
     "PreToolUse": [
       {
