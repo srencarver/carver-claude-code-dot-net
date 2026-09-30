@@ -21,6 +21,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\muestras\**\*.xml" LinkBase="muestras" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\src\Ayudas.Application\Ayudas.Application.csproj" />
     <ProjectReference Include="..\..\src\Ayudas.Domain\Ayudas.Domain.csproj" />
     <ProjectReference Include="..\..\src\Ayudas.Importacion\Ayudas.Importacion.csproj" />
