@@ -1,4 +1,5 @@
 using Ayudas.Application;
+using Ayudas.Importacion;
 using Ayudas.Infrastructure;
 using Ayudas.Infrastructure.Externos;
 using Ayudas.Infrastructure.Persistencia;
@@ -24,10 +25,12 @@ builder.Services.Configure<RazorViewEngineOptions>(opciones =>
 builder.Services.AddAplicacion();
 builder.Services.AddInfraestructura(cadenaConexion);
 
-// Cliente del Registro de ayudas (API externa; en local la simula Ayudas.Api).
-builder.Services.AddHttpClient<AyudasApiClient>(cliente =>
-    cliente.BaseAddress = new Uri(builder.Configuration["RegistroAyudas:UrlBase"]
-        ?? throw new InvalidOperationException("Falta RegistroAyudas:UrlBase en appsettings.json.")));
+builder.Services.AddImportacion();
+
+// Cliente del Registro de ayudas (API externa; en local la simula Ayudas.Api), con resiliencia.
+var opcionesRegistro = builder.Configuration.GetSection("RegistroAyudas").Get<OpcionesRegistroAyudas>()
+    ?? throw new InvalidOperationException("Falta la sección RegistroAyudas en appsettings.json.");
+builder.Services.AddRegistroAyudas(opcionesRegistro);
 
 JustificacionesDAL.CadenaConexion = cadenaConexion;
 
