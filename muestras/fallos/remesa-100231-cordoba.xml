@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100231</Referencia>
+    <NifEntidad>P1424800I</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-09-15</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>3.450,00</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>12925172T</NifBeneficiario>
+      <NombreBeneficiario>Irene Ensayo Modelo</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>1200.00</ImporteSolicitado>
+      <FechaSolicitud>2026-08-20</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>26832433N</NifBeneficiario>
+      <NombreBeneficiario>Marcos Prueba Patrón</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>850.00</ImporteSolicitado>
+      <FechaSolicitud>2026-09-02</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>61033423W</NifBeneficiario>
+      <NombreBeneficiario>Carmen Simulado Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>1400.00</ImporteSolicitado>
+      <FechaSolicitud>2026-09-11</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

@@ -1,0 +1,20 @@
+2026-09-15 10:02:11.482 +02:00 [INF] Microsoft.Hosting.Lifetime: Application started. Hosting environment: Production; Content root path: D:\sites\ayudas-web
+2026-09-15 11:41:58.903 +02:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics: Request starting HTTP/1.1 POST https://ayudas.ficticio.example/Importaciones/Importar multipart/form-data; boundary=----WebKitFormBoundaryx7cQ 2873
+2026-09-15 11:41:59.011 +02:00 [INF] Microsoft.AspNetCore.Routing.EndpointMiddleware: Executing endpoint 'Ayudas.Web.Controllers.ImportacionesController.Importar (Ayudas.Web)'
+2026-09-15 11:41:59.164 +02:00 [ERR] Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware: An unhandled exception has occurred while executing the request.
+System.FormatException: The input string '3.450,00' was not in a correct format.
+   at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Number.ParseDecimal[TChar](ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Decimal.Parse(String s, NumberStyles style, IFormatProvider provider)
+   at Ayudas.Importacion.ImportadorService.LeerImporte(String texto) in C:\agentes\_work\7\s\src\Ayudas.Importacion\ImportadorService.cs:line 151
+   at Ayudas.Importacion.ImportadorService.AnotarAvisos(LecturaRemesa lectura, ResultadoImportacion resultado) in C:\agentes\_work\7\s\src\Ayudas.Importacion\ImportadorService.cs:line 136
+   at Ayudas.Importacion.ImportadorService.ImportarAsync(Stream contenido, CancellationToken ct) in C:\agentes\_work\7\s\src\Ayudas.Importacion\ImportadorService.cs:line 105
+   at Ayudas.Web.Controllers.ImportacionesController.Importar(IFormFile fichero, CancellationToken ct) in C:\agentes\_work\7\s\src\Ayudas.Web\Controllers\ImportacionesController.cs:line 41
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+2026-09-15 11:41:59.170 +02:00 [INF] Microsoft.AspNetCore.Hosting.Diagnostics: Request finished HTTP/1.1 POST https://ayudas.ficticio.example/Importaciones/Importar - 500 - text/html 268.3190ms

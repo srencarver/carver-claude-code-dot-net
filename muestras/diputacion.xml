@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Formato propio de la Diputación Provincial de León: no sigue docs/ayudas.xsd. -->
+<EnvioDiputacion diputacion="P2435900B" convocatoria="CONV-2026-02" referencia="REM-2026-200001" fecha="15/07/2026">
+  <Beneficiario nif="52970101C" municipio="24089">
+    <Nombre>Adrián Muestra Borrador</Nombre>
+    <Actuacion>Comercio de proximidad</Actuacion>
+    <Importe moneda="EUR">1.250,00</Importe>
+    <Fecha>02/07/2026</Fecha>
+  </Beneficiario>
+  <Beneficiario nif="86451439M" municipio="24089">
+    <Nombre>Julia Formación Maqueta</Nombre>
+    <Actuacion>Digitalización de pyme</Actuacion>
+    <Importe moneda="EUR">980,50</Importe>
+    <Fecha>03/07/2026</Fecha>
+  </Beneficiario>
+  <Beneficiario nif="71234567X" municipio="24089">
+    <Nombre>Sergio Patrón Ensayo</Nombre>
+    <Actuacion>Comercio de proximidad</Actuacion>
+    <Importe moneda="EUR">2.100,00</Importe>
+    <Fecha>07/07/2026</Fecha>
+  </Beneficiario>
+  <Beneficiario nif="41057028G" municipio="24089">
+    <Nombre>Elena Ejemplo Prueba</Nombre>
+    <Actuacion>Empleo juvenil</Actuacion>
+    <Importe moneda="EUR">1.600,00</Importe>
+    <Fecha>10/07/2026</Fecha>
+  </Beneficiario>
+</EnvioDiputacion>
