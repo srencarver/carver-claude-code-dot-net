@@ -7,10 +7,12 @@ namespace Ayudas.Web.Controllers;
 public class AyudasController : Controller
 {
     private readonly IAyudaService _ayudas;
+    private readonly ILogger<AyudasController> _logger;
 
-    public AyudasController(IAyudaService ayudas)
+    public AyudasController(IAyudaService ayudas, ILogger<AyudasController> logger)
     {
         _ayudas = ayudas;
+        _logger = logger;
     }
 
     public async Task<IActionResult> Index(int pagina = 1, CancellationToken ct = default)
@@ -22,7 +24,8 @@ public class AyudasController : Controller
         }
         catch (Exception ex)
         {
-            Console.WriteLine("Error en ayudas: " + ex.Message);
+            _logger.LogError(ex, "Error al listar las ayudas (página {Pagina})", pagina);
+            TempData["Error"] = "No se ha podido cargar el listado de ayudas.";
             return View(new PaginaResultado<AyudaListadoDto>(new List<AyudaListadoDto>(), 1, AyudaService.TamanoPagina, 0));
         }
     }

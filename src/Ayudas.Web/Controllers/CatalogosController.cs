@@ -7,10 +7,12 @@ namespace Ayudas.Web.Controllers;
 public class CatalogosController : Controller
 {
     private readonly ICatalogoService _catalogos;
+    private readonly ILogger<CatalogosController> _logger;
 
-    public CatalogosController(ICatalogoService catalogos)
+    public CatalogosController(ICatalogoService catalogos, ILogger<CatalogosController> logger)
     {
         _catalogos = catalogos;
+        _logger = logger;
     }
 
     public async Task<IActionResult> Municipios(string? provincia, CancellationToken ct)
@@ -22,7 +24,8 @@ public class CatalogosController : Controller
         }
         catch (Exception ex)
         {
-            Console.WriteLine(ex.Message);
+            _logger.LogError(ex, "Error al listar los municipios de la provincia {Provincia}", provincia);
+            TempData["Error"] = "No se ha podido cargar el catálogo de municipios.";
             return View(new List<Municipio>());
         }
     }
