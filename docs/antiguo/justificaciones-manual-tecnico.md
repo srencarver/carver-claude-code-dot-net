@@ -42,3 +42,7 @@ de justificaciones. Puede desplegarse, modificarse o retirarse sin afectar al re
 ## 7. Contacto
 
 Para cualquier incidencia, abrir petición al equipo de mantenimiento de la aplicación anterior.
+
+---
+
+> **Obsoleto.** Este manual no coincide con el código actual. Ver `docs/justificaciones.md`.
