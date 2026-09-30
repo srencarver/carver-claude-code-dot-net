@@ -1,4 +1,4 @@
-@model Remesa
+@model RemesaDetalleDto
 @{
     ViewBag.Title = Model.Referencia;
 }
@@ -7,15 +7,19 @@
 
 <dl class="ficha">
     <dt>Entidad</dt>
-    <dd>@Model.EntidadLocal.Nombre (@Model.EntidadLocal.Nif)</dd>
+    <dd>@Model.EntidadNombre (@Model.EntidadNif)</dd>
     <dt>Dirección de notificación</dt>
-    <dd>@Model.EntidadLocal.DireccionNotificacion</dd>
+    <dd>@(Model.DireccionNotificacion ?? "Sin informar")</dd>
     <dt>Convocatoria</dt>
-    <dd>@Model.Convocatoria.Codigo · @Model.Convocatoria.Titulo</dd>
+    <dd>@Model.ConvocatoriaCodigo · @Model.ConvocatoriaTitulo</dd>
     <dt>Enviada</dt>
     <dd>@Model.FechaEnvio.ToString("dd/MM/yyyy HH:mm")</dd>
     <dt>Estado</dt>
     <dd>@Model.Estado</dd>
+    <dt>Importe concedido</dt>
+    <dd>@Model.ImporteTotal.ToString("N2") €</dd>
+    <dt>Cofinanciación (@Model.PorcentajeCofinanciacion.ToString("P0"))</dt>
+    <dd>@Model.ImporteCofinanciado.ToString("N2") €</dd>
 </dl>
 
 <table class="tabla">

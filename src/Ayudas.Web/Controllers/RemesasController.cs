@@ -1,20 +1,16 @@
 using Ayudas.Application.Servicios;
-using Ayudas.Infrastructure.Persistencia;
 using Ayudas.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace Ayudas.Web.Controllers;
 
 public class RemesasController : Controller
 {
-    private readonly AyudasDbContext _db;
     private readonly IRemesaService _remesas;
     private readonly IEntidadService _entidades;
 
-    public RemesasController(AyudasDbContext db, IRemesaService remesas, IEntidadService entidades)
+    public RemesasController(IRemesaService remesas, IEntidadService entidades)
     {
-        _db = db;
         _remesas = remesas;
         _entidades = entidades;
     }
@@ -31,15 +27,10 @@ public class RemesasController : Controller
         return View(modelo);
     }
 
-    public IActionResult Detalle(int id)
+    public async Task<IActionResult> Detalle(int id, CancellationToken ct)
     {
-        var remesa = _db.Remesas
-            .Include(r => r.EntidadLocal)
-            .Include(r => r.Convocatoria)
-            .Include(r => r.Ayudas)
-            .FirstOrDefault(r => r.Id == id);
-
-        if (remesa == null)
+        var remesa = await _remesas.ObtenerDetalleAsync(id, ct);
+        if (remesa is null)
         {
             return NotFound();
         }
