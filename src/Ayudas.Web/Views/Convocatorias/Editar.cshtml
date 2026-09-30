@@ -1,0 +1,40 @@
+@model ConvocatoriaViewModel
+@{
+    var esNueva = Model.Id == 0;
+    ViewBag.Title = esNueva ? "Nueva convocatoria" : "Editar convocatoria";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<form asp-action="@(esNueva ? "Crear" : "Editar")" asp-route-id="@(esNueva ? null : Model.Id)" method="post" class="formulario">
+    <div asp-validation-summary="ModelOnly" class="error"></div>
+    <input type="hidden" asp-for="Id" />
+
+    <label asp-for="Codigo"></label>
+    <input asp-for="Codigo" />
+    <span asp-validation-for="Codigo" class="error"></span>
+
+    <label asp-for="Titulo"></label>
+    <input asp-for="Titulo" />
+    <span asp-validation-for="Titulo" class="error"></span>
+
+    <label asp-for="Ejercicio"></label>
+    <input asp-for="Ejercicio" />
+    <span asp-validation-for="Ejercicio" class="error"></span>
+
+    <label asp-for="PorcentajeCofinanciacion"></label>
+    <input asp-for="PorcentajeCofinanciacion" />
+    <span asp-validation-for="PorcentajeCofinanciacion" class="error"></span>
+
+    <label asp-for="FechaInicio"></label>
+    <input asp-for="FechaInicio" />
+
+    <label asp-for="FechaFin"></label>
+    <input asp-for="FechaFin" />
+    <span asp-validation-for="FechaFin" class="error"></span>
+
+    <label class="casilla"><input asp-for="Abierta" /> Abierta</label>
+
+    <button type="submit">Guardar</button>
+    <a asp-action="Index">Cancelar</a>
+</form>

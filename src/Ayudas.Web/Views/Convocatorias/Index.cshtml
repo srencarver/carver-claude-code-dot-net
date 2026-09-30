@@ -1,0 +1,41 @@
+@model List<ConvocatoriaDto>
+@{
+    ViewBag.Title = "Convocatorias";
+}
+
+<h1>Convocatorias</h1>
+
+@if (TempData["Mensaje"] is string mensaje)
+{
+    <p class="aviso">@mensaje</p>
+}
+
+<p><a asp-action="Crear">Nueva convocatoria</a></p>
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Título</th>
+            <th>Ejercicio</th>
+            <th class="num">Cofinanciación</th>
+            <th>Plazo</th>
+            <th>Abierta</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Codigo</td>
+                <td>@c.Titulo</td>
+                <td>@c.Ejercicio</td>
+                <td class="num">@c.PorcentajeCofinanciacion.ToString("P0")</td>
+                <td>@c.FechaInicio.ToString("dd/MM/yyyy") – @c.FechaFin.ToString("dd/MM/yyyy")</td>
+                <td>@(c.Abierta ? "Sí" : "No")</td>
+                <td><a asp-action="Editar" asp-route-id="@c.Id">Editar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
