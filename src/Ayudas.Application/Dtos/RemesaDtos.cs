@@ -12,7 +12,8 @@ public class RemesaDetalleDto
     public int EntidadId { get; set; }
     public string EntidadNombre { get; set; } = string.Empty;
     public string EntidadNif { get; set; } = string.Empty;
-    public string DireccionNotificacion { get; set; } = string.Empty;
+    /// <summary>Null si la entidad no tiene dirección de notificación informada.</summary>
+    public string? DireccionNotificacion { get; set; }
 
     public string ConvocatoriaCodigo { get; set; } = string.Empty;
     public string ConvocatoriaTitulo { get; set; } = string.Empty;

@@ -27,6 +27,20 @@ public class RemesaServiceTests
         Assert.Equal(2, detalle.Ayudas.Count);
     }
 
+    [Theory]
+    [InlineData(null)]
+    [InlineData("   ")]
+    public async Task ObtenerDetalleAsync_EntidadSinDireccion_DevuelveDetalleSinDireccion(string? direccion)
+    {
+        _repositorio.Remesas.Add(Datos.Remesa(1, Datos.Entidad(direccion: direccion), Datos.Convocatoria(), 100m));
+
+        var detalle = await _servicio.ObtenerDetalleAsync(1);
+
+        Assert.NotNull(detalle);
+        Assert.Null(detalle.DireccionNotificacion);
+        Assert.Equal(100m, detalle.ImporteTotal);
+    }
+
     [Fact]
     public async Task ObtenerDetalleAsync_RemesaInexistente_DevuelveNull()
     {
