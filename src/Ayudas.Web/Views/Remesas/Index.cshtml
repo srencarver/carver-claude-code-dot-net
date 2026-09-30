@@ -1,10 +1,7 @@
-@model List<Remesa>
+@model RemesasIndexViewModel
 @{
     ViewBag.Title = "Remesas";
-    int pagina = ViewBag.Pagina;
-    int totalPaginas = ViewBag.TotalPaginas;
-    int? entidadId = ViewBag.EntidadId;
-    List<EntidadLocal> entidades = ViewBag.Entidades;
+    var resultado = Model.Resultado;
 }
 
 <h1>Remesas recibidas</h1>
@@ -13,9 +10,9 @@
     <label for="entidadId">Entidad</label>
     <select name="entidadId" id="entidadId">
         <option value="">Todas</option>
-        @foreach (var e in entidades)
+        @foreach (var e in Model.Entidades)
         {
-            <option value="@e.Id" selected="@(e.Id == entidadId)">@e.Nombre</option>
+            <option value="@e.Id" selected="@(e.Id == Model.EntidadId)">@e.Nombre</option>
         }
     </select>
     <button type="submit">Filtrar</button>
@@ -35,16 +32,16 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var r in Model)
+        @foreach (var r in resultado.Elementos)
         {
             <tr>
                 <td>@r.Referencia</td>
-                <td>@r.EntidadLocal.Nombre</td>
-                <td>@r.Convocatoria.Codigo</td>
+                <td>@r.EntidadNombre</td>
+                <td>@r.ConvocatoriaCodigo</td>
                 <td>@r.FechaEnvio.ToString("dd/MM/yyyy HH:mm")</td>
                 <td>@r.Estado</td>
-                <td class="num">@r.Ayudas.Count</td>
-                <td class="num">@r.Ayudas.Sum(a => a.ImporteConcedido).ToString("N2")</td>
+                <td class="num">@r.NumeroAyudas</td>
+                <td class="num">@r.ImporteConcedido.ToString("N2")</td>
                 <td><a asp-action="Detalle" asp-route-id="@r.Id">Ver</a></td>
             </tr>
         }
@@ -52,15 +49,15 @@
 </table>
 
 <nav class="paginacion">
-    @for (var i = 1; i <= totalPaginas; i++)
+    @for (var i = 1; i <= resultado.TotalPaginas; i++)
     {
-        if (i == pagina)
+        if (i == resultado.Pagina)
         {
             <strong>@i</strong>
         }
         else
         {
-            <a href="?pagina=@i&entidadId=@entidadId">@i</a>
+            <a asp-action="Index" asp-route-pagina="@i" asp-route-entidadId="@Model.EntidadId">@i</a>
         }
     }
 </nav>

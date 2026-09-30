@@ -1,4 +1,6 @@
+using Ayudas.Application.Servicios;
 using Ayudas.Infrastructure.Persistencia;
+using Ayudas.Web.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -7,43 +9,26 @@ namespace Ayudas.Web.Controllers;
 public class RemesasController : Controller
 {
     private readonly AyudasDbContext _db;
+    private readonly IRemesaService _remesas;
+    private readonly IEntidadService _entidades;
 
-    public RemesasController(AyudasDbContext db)
+    public RemesasController(AyudasDbContext db, IRemesaService remesas, IEntidadService entidades)
     {
         _db = db;
+        _remesas = remesas;
+        _entidades = entidades;
     }
 
-    public IActionResult Index(int? entidadId, int pagina = 1)
+    public async Task<IActionResult> Index(int? entidadId, int pagina = 1, CancellationToken ct = default)
     {
-        const int tamanoPagina = 10;
-
-        var remesas = _db.Remesas
-            .Include(r => r.EntidadLocal)
-            .Include(r => r.Convocatoria)
-            .Include(r => r.Ayudas)
-            .ToList();
-
-        var filtradas = remesas
-            .Where(r => entidadId == null || r.EntidadLocalId == entidadId)
-            .OrderByDescending(r => r.FechaEnvio)
-            .ToList();
-
-        if (pagina < 1)
+        var modelo = new RemesasIndexViewModel
         {
-            pagina = 1;
-        }
+            Resultado = await _remesas.ListarPaginadoAsync(entidadId, pagina, ct),
+            EntidadId = entidadId,
+            Entidades = await _entidades.ListarAsync(ct)
+        };
 
-        ViewBag.Pagina = pagina;
-        ViewBag.TotalPaginas = (int)Math.Ceiling(filtradas.Count / (double)tamanoPagina);
-        ViewBag.EntidadId = entidadId;
-        ViewBag.Entidades = _db.EntidadesLocales.OrderBy(e => e.Nombre).ToList();
-
-        var paginaActual = filtradas
-            .Skip((pagina - 1) * tamanoPagina)
-            .Take(tamanoPagina)
-            .ToList();
-
-        return View(paginaActual);
+        return View(modelo);
     }
 
     public IActionResult Detalle(int id)
