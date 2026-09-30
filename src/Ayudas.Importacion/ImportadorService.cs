@@ -132,14 +132,18 @@ public class ImportadorService
             resultado.Avisos.Add($"La cabecera declara {declaradas} solicitudes y el fichero trae {lectura.Solicitudes.Count}.");
         }
 
-        var importeDeclarado = LeerImporte(lectura.Cabecera.ImporteTotal);
-        if (importeDeclarado is null)
+        // Hay formatos que no traen importe total: entonces no hay nada que comparar.
+        if (lectura.Cabecera.ImporteTotal is not null)
         {
-            resultado.Avisos.Add($"El importe total de la cabecera ({lectura.Cabecera.ImporteTotal}) no se puede leer.");
-        }
-        else if (importeDeclarado != resultado.ImporteAceptado)
-        {
-            resultado.Avisos.Add($"El importe total de la cabecera ({importeDeclarado:N2}) no coincide con el de las solicitudes aceptadas ({resultado.ImporteAceptado:N2}).");
+            var importeDeclarado = LeerImporte(lectura.Cabecera.ImporteTotal);
+            if (importeDeclarado is null)
+            {
+                resultado.Avisos.Add($"El importe total de la cabecera ({lectura.Cabecera.ImporteTotal}) no se puede leer.");
+            }
+            else if (importeDeclarado != resultado.ImporteAceptado)
+            {
+                resultado.Avisos.Add($"El importe total de la cabecera ({importeDeclarado:N2}) no coincide con el de las solicitudes aceptadas ({resultado.ImporteAceptado:N2}).");
+            }
         }
 
         foreach (var solicitud in lectura.Solicitudes.Where(s => s.ElementosDesconocidos.Count > 0))

@@ -33,7 +33,7 @@ public class ImportadorServiceTests
         _convocatorias.Convocatorias.Add(Convocatoria(2, "CONV-2026-02", new DateOnly(2026, 4, 1), new DateOnly(2026, 12, 31)));
 
         _importador = new ImportadorService(
-            new IAyudasLector[] { new AyudasXmlReader() },
+            new IAyudasLector[] { new AyudasXmlReader(), new DiputacionXmlReader() },
             _entidades,
             _convocatorias,
             _remesas,
@@ -109,6 +109,18 @@ public class ImportadorServiceTests
         var resultado = await Importar(Path.Combine("muestras", "fallos", "remesa-100231-cordoba.xml"));
 
         Assert.Equal(3, resultado.Aceptadas);
+        Assert.Empty(resultado.Avisos);
+    }
+
+    [Fact]
+    public async Task ImportarAsync_FormatoDeLaDiputacion_SeImportaConSuLector()
+    {
+        var resultado = await Importar(Path.Combine("muestras", "diputacion.xml"));
+
+        Assert.Equal("EnvioDiputacion (Diputación de León)", resultado.Formato);
+        Assert.Equal(3, resultado.Aceptadas);
+        var rechazo = Assert.Single(resultado.Resultados.SelectMany(r => r.Rechazos));
+        Assert.Equal("NifBeneficiario", rechazo.Campo);
         Assert.Empty(resultado.Avisos);
     }
 
