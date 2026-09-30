@@ -1,4 +1,3 @@
-using System.Globalization;
 using System.Xml;
 using System.Xml.Linq;
 using Ayudas.Application.Abstracciones;
@@ -134,7 +133,11 @@ public class ImportadorService
         }
 
         var importeDeclarado = LeerImporte(lectura.Cabecera.ImporteTotal);
-        if (importeDeclarado != resultado.ImporteAceptado)
+        if (importeDeclarado is null)
+        {
+            resultado.Avisos.Add($"El importe total de la cabecera ({lectura.Cabecera.ImporteTotal}) no se puede leer.");
+        }
+        else if (importeDeclarado != resultado.ImporteAceptado)
         {
             resultado.Avisos.Add($"El importe total de la cabecera ({importeDeclarado:N2}) no coincide con el de las solicitudes aceptadas ({resultado.ImporteAceptado:N2}).");
         }
@@ -145,9 +148,10 @@ public class ImportadorService
         }
     }
 
-    private static decimal LeerImporte(string? texto)
+    private static decimal? LeerImporte(string? texto)
     {
-        // El contrato dice que el importe va con punto decimal.
-        return decimal.Parse(texto ?? "0", NumberStyles.Number, CultureInfo.InvariantCulture);
+        // Las entidades no siempre usan el punto decimal del contrato: mismo criterio que en las solicitudes.
+        var importe = ImporteNormalizer.Normalizar(texto);
+        return importe.EsValido ? importe.Valor : null;
     }
 }
