@@ -2,6 +2,18 @@ using Ayudas.Domain.Entidades;
 
 namespace Ayudas.Application.Dtos;
 
+public class RemesaListadoDto
+{
+    public int Id { get; set; }
+    public string Referencia { get; set; } = string.Empty;
+    public string EntidadNombre { get; set; } = string.Empty;
+    public string ConvocatoriaCodigo { get; set; } = string.Empty;
+    public DateTime FechaEnvio { get; set; }
+    public EstadoRemesa Estado { get; set; }
+    public int NumeroAyudas { get; set; }
+    public decimal ImporteConcedido { get; set; }
+}
+
 public class RemesaDetalleDto
 {
     public int Id { get; set; }

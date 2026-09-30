@@ -6,6 +6,8 @@ namespace Ayudas.Application.Servicios;
 
 public class RemesaService : IRemesaService
 {
+    public const int TamanoPagina = 10;
+
     private readonly IRemesaRepository _remesas;
 
     public RemesaService(IRemesaRepository remesas)
@@ -51,6 +53,16 @@ public class RemesaService : IRemesaService
                 })
                 .ToList()
         };
+    }
+
+    public Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, int pagina, CancellationToken ct = default)
+    {
+        if (pagina < 1)
+        {
+            pagina = 1;
+        }
+
+        return _remesas.ListarPaginadoAsync(entidadId, pagina, TamanoPagina, ct);
     }
 
     /// <summary>
