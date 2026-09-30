@@ -23,6 +23,15 @@ public class RemesaRepository : IRemesaRepository
             .Include(r => r.Ayudas)
             .FirstOrDefaultAsync(r => r.Id == id, ct);
 
+    public Task<bool> ExisteReferenciaAsync(string referencia, CancellationToken ct = default) =>
+        _db.Remesas.AnyAsync(r => r.Referencia == referencia, ct);
+
+    public async Task AgregarAsync(Remesa remesa, CancellationToken ct = default)
+    {
+        _db.Remesas.Add(remesa);
+        await _db.SaveChangesAsync(ct);
+    }
+
     public async Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, EstadoRemesa? estado, int pagina, int tamanoPagina, CancellationToken ct = default)
     {
         var consulta = _db.Remesas.AsNoTracking();

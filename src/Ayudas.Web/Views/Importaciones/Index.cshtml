@@ -1,0 +1,13 @@
+@{
+    ViewBag.Title = "Importar remesa";
+}
+
+<h1>Importar remesa</h1>
+
+<p>Fichero XML de una remesa de solicitudes (formato <code>docs/ayudas.xsd</code>).</p>
+
+<form asp-action="Importar" method="post" enctype="multipart/form-data" class="formulario">
+    <div asp-validation-summary="All" class="error"></div>
+    <input type="file" name="fichero" accept=".xml" />
+    <button type="submit">Importar</button>
+</form>

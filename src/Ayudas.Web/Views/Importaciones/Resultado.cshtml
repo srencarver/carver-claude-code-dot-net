@@ -1,0 +1,79 @@
+@model ImportacionViewModel
+@{
+    ViewBag.Title = "Resultado de la importación";
+    var r = Model.Resultado;
+}
+
+<h1>Resultado de la importación</h1>
+
+<dl class="ficha">
+    <dt>Fichero</dt>
+    <dd>@Model.NombreFichero</dd>
+    <dt>Formato</dt>
+    <dd>@r.Formato</dd>
+    <dt>Referencia</dt>
+    <dd>@r.Referencia</dd>
+    <dt>Solicitudes aceptadas</dt>
+    <dd>@r.Aceptadas (@r.ImporteAceptado.ToString("N2") €)</dd>
+    <dt>Solicitudes rechazadas</dt>
+    <dd>@r.Rechazadas</dd>
+    @if (Model.NumeroRegistro is not null)
+    {
+        <dt>Número de registro</dt>
+        <dd>@Model.NumeroRegistro</dd>
+    }
+</dl>
+
+@if (r.RemesaRechazada)
+{
+    <p class="error">Remesa rechazada: @r.MotivoRechazoRemesa</p>
+}
+else if (r.RemesaId is not null)
+{
+    <p class="aviso">Remesa importada. <a asp-controller="Remesas" asp-action="Detalle" asp-route-id="@r.RemesaId">Ver la remesa</a></p>
+}
+
+@if (Model.AvisoRegistro is not null)
+{
+    <p class="error">@Model.AvisoRegistro</p>
+}
+
+@if (r.Avisos.Count > 0)
+{
+    <h2>Avisos</h2>
+    <ul>
+        @foreach (var aviso in r.Avisos)
+        {
+            <li>@aviso</li>
+        }
+    </ul>
+}
+
+@if (r.Rechazadas > 0)
+{
+    <h2>Rechazos</h2>
+    <p><a asp-action="DescargarInforme">Descargar el informe de rechazos (CSV)</a></p>
+    <table class="tabla">
+        <thead>
+            <tr>
+                <th>Línea</th>
+                <th>Campo</th>
+                <th>Valor</th>
+                <th>Motivo</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var rechazo in r.Resultados.SelectMany(x => x.Rechazos))
+            {
+                <tr>
+                    <td>@rechazo.Fila</td>
+                    <td>@rechazo.Campo</td>
+                    <td><code>@rechazo.Valor</code></td>
+                    <td>@rechazo.Motivo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<p><a asp-action="Index">Importar otra remesa</a></p>

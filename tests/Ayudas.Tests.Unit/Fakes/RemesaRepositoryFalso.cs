@@ -11,6 +11,16 @@ public class RemesaRepositoryFalso : IRemesaRepository
     public Task<Remesa?> ObtenerConDetalleAsync(int id, CancellationToken ct = default) =>
         Task.FromResult(Remesas.FirstOrDefault(r => r.Id == id));
 
+    public Task<bool> ExisteReferenciaAsync(string referencia, CancellationToken ct = default) =>
+        Task.FromResult(Remesas.Any(r => r.Referencia == referencia));
+
+    public Task AgregarAsync(Remesa remesa, CancellationToken ct = default)
+    {
+        remesa.Id = Remesas.Count == 0 ? 1 : Remesas.Max(r => r.Id) + 1;
+        Remesas.Add(remesa);
+        return Task.CompletedTask;
+    }
+
     public Task<PaginaResultado<RemesaListadoDto>> ListarPaginadoAsync(int? entidadId, EstadoRemesa? estado, int pagina, int tamanoPagina, CancellationToken ct = default)
     {
         var filtradas = Remesas
