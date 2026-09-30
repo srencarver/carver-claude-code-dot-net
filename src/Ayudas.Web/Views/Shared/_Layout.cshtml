@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewBag.Title - Gestión de ayudas</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="cabecera">
+        <a class="marca" asp-controller="Home" asp-action="Index">Gestión de ayudas a entidades locales</a>
+        <nav>
+            <a asp-controller="Entidades" asp-action="Index">Entidades</a>
+            <a asp-controller="Remesas" asp-action="Index">Remesas</a>
+            <a asp-controller="Ayudas" asp-action="Index">Ayudas</a>
+            <a asp-controller="Informes" asp-action="Index">Informes</a>
+            <a asp-controller="Catalogos" asp-action="Municipios">Municipios</a>
+            <a href="/Justificaciones">Justificaciones</a>
+        </nav>
+    </header>
+    <main class="contenido">
+        @if (TempData["Error"] is string error)
+        {
+            <p class="error">@error</p>
+        }
+        @RenderBody()
+    </main>
+    <footer class="pie">Aplicación de formación · datos ficticios</footer>
+</body>
+</html>

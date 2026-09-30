@@ -1,0 +1,37 @@
+@model List<EntidadListadoDto>
+@{
+    ViewBag.Title = "Entidades locales";
+}
+
+<h1>Entidades locales</h1>
+
+@if (TempData["Mensaje"] is string mensaje)
+{
+    <p class="aviso">@mensaje</p>
+}
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>NIF</th>
+            <th>Nombre</th>
+            <th>Tipo</th>
+            <th>Provincia</th>
+            <th>Activa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var entidad in Model)
+        {
+            <tr>
+                <td>@entidad.Nif</td>
+                <td>@entidad.Nombre</td>
+                <td>@entidad.Tipo</td>
+                <td>@entidad.Provincia</td>
+                <td>@(entidad.Activa ? "Sí" : "No")</td>
+                <td><a asp-action="Editar" asp-route-id="@entidad.Id">Editar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

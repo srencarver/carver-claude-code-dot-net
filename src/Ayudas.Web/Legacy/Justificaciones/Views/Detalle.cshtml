@@ -1,0 +1,42 @@
+@model Ayudas.Web.Legacy.Justificaciones.JustificacionFila
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Justificación " + Model.IdJustificacion;
+}
+
+<h1>Justificación @Model.IdJustificacion</h1>
+
+@if (TempData["Mensaje"] != null)
+{
+    <p class="aviso">@TempData["Mensaje"]</p>
+}
+
+<dl class="ficha">
+    <dt>Beneficiario</dt>
+    <dd>@Model.NombreBeneficiario (@Model.NifBeneficiario)</dd>
+    <dt>Ayuda</dt>
+    <dd>@Model.IdAyuda</dd>
+    <dt>Fecha de presentación</dt>
+    <dd>@Model.FechaPresentacion.ToString("dd/MM/yyyy")</dd>
+    <dt>Importe justificado</dt>
+    <dd>@Model.ImporteJustificado.ToString("N2") €</dd>
+    <dt>Importe concedido</dt>
+    <dd>@Model.ImporteConcedido.ToString("N2") €</dd>
+    <dt>Estado</dt>
+    <dd>@Model.DescripcionEstado</dd>
+    <dt>Observaciones</dt>
+    <dd>@Model.Observaciones</dd>
+</dl>
+
+@if (Model.Estado == "P")
+{
+    using (Html.BeginForm("Validar", "Justificaciones", new { id = Model.IdJustificacion }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <label for="observaciones">Observaciones</label>
+        <input type="text" name="observaciones" id="observaciones" />
+        <button type="submit">Validar</button>
+    }
+}
+
+<p><a href="/Justificaciones">Volver al listado</a></p>

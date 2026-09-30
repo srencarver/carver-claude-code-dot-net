@@ -1,0 +1,49 @@
+@model List<Ayudas.Web.Legacy.Justificaciones.JustificacionFila>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Justificaciones";
+    string estado = ViewBag.Estado;
+}
+
+<h1>Justificaciones</h1>
+
+<form method="get" action="/Justificaciones" class="filtro">
+    <label for="estado">Estado</label>
+    <select name="estado" id="estado">
+        <option value="">Todos</option>
+        <option value="P" selected="@(estado == "P")">Pendiente</option>
+        <option value="A" selected="@(estado == "A")">Aprobada</option>
+        <option value="R" selected="@(estado == "R")">Rechazada</option>
+    </select>
+    <button type="submit">Filtrar</button>
+</form>
+
+<p>@ViewBag.Total justificaciones</p>
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Beneficiario</th>
+            <th>Presentada</th>
+            <th class="num">Justificado</th>
+            <th class="num">Concedido</th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var j in Model)
+        {
+            <tr>
+                <td>@j.IdJustificacion</td>
+                <td>@j.NombreBeneficiario (@j.NifBeneficiario)</td>
+                <td>@j.FechaPresentacion.ToString("dd/MM/yyyy")</td>
+                <td class="num">@j.ImporteJustificado.ToString("N2")</td>
+                <td class="num">@j.ImporteConcedido.ToString("N2")</td>
+                <td>@j.DescripcionEstado</td>
+                <td><a href="/Justificaciones/Detalle/@j.IdJustificacion">Ver</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

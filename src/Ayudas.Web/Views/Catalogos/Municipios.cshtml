@@ -1,0 +1,32 @@
+@model List<Municipio>
+@{
+    ViewBag.Title = "Municipios";
+}
+
+<h1>Catálogo de municipios</h1>
+
+<form method="get" class="filtro">
+    <label for="provincia">Provincia</label>
+    <input type="text" name="provincia" id="provincia" value="@ViewBag.Provincia" />
+    <button type="submit">Filtrar</button>
+</form>
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Código INE</th>
+            <th>Municipio</th>
+            <th>Provincia</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var m in Model)
+        {
+            <tr>
+                <td>@m.CodigoIne</td>
+                <td>@m.Nombre</td>
+                <td>@m.Provincia</td>
+            </tr>
+        }
+    </tbody>
+</table>

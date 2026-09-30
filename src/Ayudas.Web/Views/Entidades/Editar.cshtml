@@ -1,0 +1,48 @@
+@model EntidadEdicionViewModel
+@{
+    ViewBag.Title = "Editar entidad";
+}
+
+<h1>Editar entidad local</h1>
+
+<form asp-action="Editar" asp-route-id="@Model.Id" method="post" class="formulario">
+    <div asp-validation-summary="ModelOnly" class="error"></div>
+    <input type="hidden" asp-for="Id" />
+
+    <label asp-for="Nif"></label>
+    <input asp-for="Nif" />
+    <span asp-validation-for="Nif" class="error"></span>
+
+    <label asp-for="Nombre"></label>
+    <input asp-for="Nombre" />
+    <span asp-validation-for="Nombre" class="error"></span>
+
+    <label asp-for="Tipo"></label>
+    <select asp-for="Tipo" asp-items="Html.GetEnumSelectList<TipoEntidad>()"></select>
+
+    <label asp-for="CodigoMunicipio"></label>
+    <input asp-for="CodigoMunicipio" />
+    <span asp-validation-for="CodigoMunicipio" class="error"></span>
+
+    <label asp-for="Provincia"></label>
+    <input asp-for="Provincia" />
+    <span asp-validation-for="Provincia" class="error"></span>
+
+    <label asp-for="DireccionNotificacion"></label>
+    <input asp-for="DireccionNotificacion" />
+    <span asp-validation-for="DireccionNotificacion" class="error"></span>
+
+    <label asp-for="CorreoNotificacion"></label>
+    <input asp-for="CorreoNotificacion" />
+    <span asp-validation-for="CorreoNotificacion" class="error"></span>
+
+    <label class="casilla"><input asp-for="Activa" /> Activa</label>
+
+    @if (Model.FechaModificacion is not null)
+    {
+        <p class="nota">Última modificación: @Model.FechaModificacion.Value.ToString("dd/MM/yyyy HH:mm") por @Model.UsuarioModificacion</p>
+    }
+
+    <button type="submit">Guardar</button>
+    <a asp-action="Index">Cancelar</a>
+</form>

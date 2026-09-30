@@ -1,0 +1,47 @@
+@model Remesa
+@{
+    ViewBag.Title = Model.Referencia;
+}
+
+<h1>Remesa @Model.Referencia</h1>
+
+<dl class="ficha">
+    <dt>Entidad</dt>
+    <dd>@Model.EntidadLocal.Nombre (@Model.EntidadLocal.Nif)</dd>
+    <dt>Dirección de notificación</dt>
+    <dd>@Model.EntidadLocal.DireccionNotificacion</dd>
+    <dt>Convocatoria</dt>
+    <dd>@Model.Convocatoria.Codigo · @Model.Convocatoria.Titulo</dd>
+    <dt>Enviada</dt>
+    <dd>@Model.FechaEnvio.ToString("dd/MM/yyyy HH:mm")</dd>
+    <dt>Estado</dt>
+    <dd>@Model.Estado</dd>
+</dl>
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>NIF</th>
+            <th>Beneficiario</th>
+            <th>Municipio</th>
+            <th>Concepto</th>
+            <th class="num">Solicitado</th>
+            <th class="num">Concedido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model.Ayudas)
+        {
+            <tr>
+                <td>@a.NifBeneficiario</td>
+                <td>@a.NombreBeneficiario</td>
+                <td>@a.CodigoMunicipio</td>
+                <td>@a.Concepto</td>
+                <td class="num">@a.ImporteSolicitado.ToString("N2")</td>
+                <td class="num">@a.ImporteConcedido.ToString("N2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p><a asp-action="Index">Volver al listado</a></p>

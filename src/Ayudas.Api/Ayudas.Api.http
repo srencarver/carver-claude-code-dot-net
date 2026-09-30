@@ -1,0 +1,11 @@
+@api = http://localhost:5090
+
+### Entidades locales
+GET {{api}}/api/entidades
+
+### Detalle de una entidad
+GET {{api}}/api/entidades/1
+
+### Detalle de una remesa
+GET {{api}}/api/remesas/1
+

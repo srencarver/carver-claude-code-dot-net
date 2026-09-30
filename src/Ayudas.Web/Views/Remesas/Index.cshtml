@@ -1,0 +1,66 @@
+@model List<Remesa>
+@{
+    ViewBag.Title = "Remesas";
+    int pagina = ViewBag.Pagina;
+    int totalPaginas = ViewBag.TotalPaginas;
+    int? entidadId = ViewBag.EntidadId;
+    List<EntidadLocal> entidades = ViewBag.Entidades;
+}
+
+<h1>Remesas recibidas</h1>
+
+<form method="get" class="filtro">
+    <label for="entidadId">Entidad</label>
+    <select name="entidadId" id="entidadId">
+        <option value="">Todas</option>
+        @foreach (var e in entidades)
+        {
+            <option value="@e.Id" selected="@(e.Id == entidadId)">@e.Nombre</option>
+        }
+    </select>
+    <button type="submit">Filtrar</button>
+</form>
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Referencia</th>
+            <th>Entidad</th>
+            <th>Convocatoria</th>
+            <th>Enviada</th>
+            <th>Estado</th>
+            <th class="num">Ayudas</th>
+            <th class="num">Importe concedido</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Referencia</td>
+                <td>@r.EntidadLocal.Nombre</td>
+                <td>@r.Convocatoria.Codigo</td>
+                <td>@r.FechaEnvio.ToString("dd/MM/yyyy HH:mm")</td>
+                <td>@r.Estado</td>
+                <td class="num">@r.Ayudas.Count</td>
+                <td class="num">@r.Ayudas.Sum(a => a.ImporteConcedido).ToString("N2")</td>
+                <td><a asp-action="Detalle" asp-route-id="@r.Id">Ver</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav class="paginacion">
+    @for (var i = 1; i <= totalPaginas; i++)
+    {
+        if (i == pagina)
+        {
+            <strong>@i</strong>
+        }
+        else
+        {
+            <a href="?pagina=@i&entidadId=@entidadId">@i</a>
+        }
+    }
+</nav>

@@ -1,0 +1,54 @@
+@model InformeResumenDto
+@{
+    ViewBag.Title = "Informes";
+}
+
+<h1>Informes</h1>
+
+<h2>Resumen por convocatoria</h2>
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Convocatoria</th>
+            <th>Título</th>
+            <th class="num">Remesas</th>
+            <th class="num">Importe concedido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model.Convocatorias)
+        {
+            <tr>
+                <td>@c.Codigo</td>
+                <td>@c.Titulo</td>
+                <td class="num">@c.NumeroRemesas</td>
+                <td class="num">@c.ImporteConcedido.ToString("N2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Justificaciones pendientes de validar</h2>
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Remesa</th>
+            <th>Beneficiario</th>
+            <th>Presentada</th>
+            <th class="num">Importe justificado</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var j in Model.JustificacionesPendientes)
+        {
+            <tr>
+                <td><a href="/Justificaciones/Detalle/@j.IdJustificacion">@j.IdJustificacion</a></td>
+                <td>@j.ReferenciaRemesa</td>
+                <td>@j.NombreBeneficiario</td>
+                <td>@j.FechaPresentacion.ToString("dd/MM/yyyy")</td>
+                <td class="num">@j.ImporteJustificado.ToString("N2")</td>
+            </tr>
+        }
+    </tbody>
+</table>

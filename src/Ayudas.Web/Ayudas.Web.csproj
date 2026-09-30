@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <RootNamespace>Ayudas.Web</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ayudas.Application\Ayudas.Application.csproj" />
+    <ProjectReference Include="..\Ayudas.Infrastructure\Ayudas.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

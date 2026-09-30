@@ -1,0 +1,16 @@
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<h1>Gestión de ayudas a entidades locales</h1>
+
+<p>Aplicación de formación: las entidades locales envían remesas de solicitudes de ayuda
+para cada convocatoria, y aquí se consultan, validan y justifican.</p>
+
+<ul class="accesos">
+    <li><a asp-controller="Entidades" asp-action="Index">Entidades locales</a></li>
+    <li><a asp-controller="Remesas" asp-action="Index">Remesas recibidas</a></li>
+    <li><a asp-controller="Ayudas" asp-action="Index">Ayudas solicitadas</a></li>
+    <li><a asp-controller="Informes" asp-action="Index">Informes</a></li>
+    <li><a href="/Justificaciones">Justificaciones (módulo heredado)</a></li>
+</ul>

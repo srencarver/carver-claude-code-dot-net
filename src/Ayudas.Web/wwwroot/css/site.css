@@ -1,0 +1,56 @@
+:root {
+    --color-texto: #1f2328;
+    --color-suave: #57606a;
+    --color-borde: #d0d7de;
+    --color-fondo: #f6f8fa;
+    --color-marca: #b3122e;
+    --color-error: #b3122e;
+    --color-aviso: #1a7f37;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--color-texto);
+    background: #fff;
+}
+
+.cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background: #1f2328;
+}
+
+.cabecera a { color: #fff; text-decoration: none; }
+.cabecera nav { display: flex; flex-wrap: wrap; gap: 1rem; }
+.marca { font-weight: 600; }
+
+.contenido { padding: 1.5rem; max-width: 1200px; }
+
+.pie { padding: 1rem 1.5rem; color: var(--color-suave); font-size: 0.85rem; }
+
+.tabla { border-collapse: collapse; width: 100%; margin: 1rem 0; }
+.tabla th, .tabla td { border-bottom: 1px solid var(--color-borde); padding: 0.4rem 0.6rem; text-align: left; }
+.tabla th { background: var(--color-fondo); }
+.num { text-align: right !important; }
+
+.filtro, .formulario { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; margin: 1rem 0; }
+.formulario { flex-direction: column; align-items: flex-start; max-width: 480px; }
+.formulario input[type=text], .formulario input:not([type]), .formulario select { width: 100%; padding: 0.35rem; }
+
+.paginacion { display: flex; gap: 0.5rem; align-items: center; }
+
+.ficha { display: grid; grid-template-columns: max-content 1fr; gap: 0.3rem 1rem; }
+.ficha dt { font-weight: 600; }
+.ficha dd { margin: 0; }
+
+.error { color: var(--color-error); }
+.aviso { color: var(--color-aviso); }
+.nota { color: var(--color-suave); font-size: 0.9rem; }
+.casilla { display: flex; gap: 0.4rem; align-items: center; }

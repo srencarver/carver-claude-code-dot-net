@@ -1,0 +1,12 @@
+@model ErrorViewModel
+@{
+    ViewBag.Title = "Error";
+}
+
+<h1>Se ha producido un error</h1>
+<p>No se ha podido completar la petición.</p>
+
+@if (Model.ShowRequestId)
+{
+    <p>Identificador de la petición: <code>@Model.RequestId</code></p>
+}

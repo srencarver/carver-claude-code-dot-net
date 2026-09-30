@@ -1,0 +1,46 @@
+@model PaginaResultado<AyudaListadoDto>
+@{
+    ViewBag.Title = "Ayudas";
+}
+
+<h1>Ayudas solicitadas</h1>
+
+<p>@Model.TotalElementos ayudas</p>
+
+<table class="tabla">
+    <thead>
+        <tr>
+            <th>Remesa</th>
+            <th>NIF</th>
+            <th>Beneficiario</th>
+            <th>Municipio</th>
+            <th>Solicitud</th>
+            <th class="num">Concedido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var a in Model.Elementos)
+        {
+            <tr>
+                <td>@a.RemesaReferencia</td>
+                <td>@a.NifBeneficiario</td>
+                <td>@a.NombreBeneficiario</td>
+                <td>@a.CodigoMunicipio</td>
+                <td>@a.FechaSolicitud.ToString("dd/MM/yyyy")</td>
+                <td class="num">@a.ImporteConcedido.ToString("N2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<nav class="paginacion">
+    @if (Model.Pagina > 1)
+    {
+        <a asp-action="Index" asp-route-pagina="@(Model.Pagina - 1)">Anterior</a>
+    }
+    <span>Página @Model.Pagina de @Model.TotalPaginas</span>
+    @if (Model.Pagina < Model.TotalPaginas)
+    {
+        <a asp-action="Index" asp-route-pagina="@(Model.Pagina + 1)">Siguiente</a>
+    }
+</nav>
