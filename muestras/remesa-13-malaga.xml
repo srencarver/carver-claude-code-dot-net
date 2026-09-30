@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100013</Referencia>
+    <NifEntidad>P2943300J</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>5</NumeroSolicitudes>
+    <ImporteTotal>25433.30</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>15712195K</NifBeneficiario>
+      <NombreBeneficiario>Elena Formación Prueba</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>500.60</ImporteSolicitado>
+      <FechaSolicitud>2026-04-24</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>36173602F</NifBeneficiario>
+      <NombreBeneficiario>Adrián Patrón Patrón</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>1048.94</ImporteSolicitado>
+      <FechaSolicitud>2026-04-04</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>79594247X</NifBeneficiario>
+      <NombreBeneficiario>Lucía Ejemplo Simulado</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>13381.80</ImporteSolicitado>
+      <FechaSolicitud>2026-04-19</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>81697960M</NifBeneficiario>
+      <NombreBeneficiario>Adrián Formación Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>9501.96</ImporteSolicitado>
+      <FechaSolicitud>2026-05-19</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

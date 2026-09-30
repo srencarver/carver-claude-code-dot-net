@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100018</Referencia>
+    <NifEntidad>p0821100e</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>19681.71</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>98929939Q</NifBeneficiario>
+      <NombreBeneficiario>Pablo Ejemplo Demostración</NombreBeneficiario>
+      <CodigoMunicipio>08019</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>7904.18</ImporteSolicitado>
+      <FechaSolicitud>2026-04-05</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>13709613A</NifBeneficiario>
+      <NombreBeneficiario>Julia Ejemplo Demostración</NombreBeneficiario>
+      <CodigoMunicipio>08019</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>6037.28</ImporteSolicitado>
+      <FechaSolicitud>2026-05-14</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>55215735A</NifBeneficiario>
+      <NombreBeneficiario>Carmen Demostración Muestra</NombreBeneficiario>
+      <CodigoMunicipio>08019</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>5740.25</ImporteSolicitado>
+      <FechaSolicitud>2026-05-01</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

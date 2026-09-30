@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100017</Referencia>
+    <NifEntidad>P0110000G</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>25132.64</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>B01102342</NifBeneficiario>
+      <NombreBeneficiario>Julia Ficticio Ficticio</NombreBeneficiario>
+      <CodigoMunicipio> 01059 </CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>10857.29</ImporteSolicitado>
+      <FechaSolicitud>2026-05-01</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>G01543214</NifBeneficiario>
+      <NombreBeneficiario>Martina Ensayo Demostración</NombreBeneficiario>
+      <CodigoMunicipio>01059</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>7384.95</ImporteSolicitado>
+      <FechaSolicitud>2026-05-20</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>74941746H</NifBeneficiario>
+      <NombreBeneficiario>Elena Muestra Patrón</NombreBeneficiario>
+      <CodigoMunicipio>01059</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>6890.40</ImporteSolicitado>
+      <FechaSolicitud>2026-04-08</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100010</Referencia>
+    <NifEntidad>P2839600J</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>5</NumeroSolicitudes>
+    <ImporteTotal>10599.42</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>95696450M</NifBeneficiario>
+      <NombreBeneficiario>Paula Modelo Prueba</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>-150.00</ImporteSolicitado>
+      <FechaSolicitud>2026-06-07</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>73287267K</NifBeneficiario>
+      <NombreBeneficiario>Marcos Simulado Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>0.00</ImporteSolicitado>
+      <FechaSolicitud>2026-06-23</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>33188203P</NifBeneficiario>
+      <NombreBeneficiario>Daniel Muestra Prueba</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>950</ImporteSolicitado>
+      <FechaSolicitud>2026-06-10</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>97704093R</NifBeneficiario>
+      <NombreBeneficiario>Daniel Ejemplo Prueba</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>100.555</ImporteSolicitado>
+      <FechaSolicitud>2026-06-25</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>25775723Z</NifBeneficiario>
+      <NombreBeneficiario>Álvaro Simulado Muestra</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>9649.42</ImporteSolicitado>
+      <FechaSolicitud>2026-04-06</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

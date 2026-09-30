@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100006</Referencia>
+    <NifEntidad>P0110000G</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>33738.51</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario> 11111111h </NifBeneficiario>
+      <NombreBeneficiario>Hugo Prueba Muestra</NombreBeneficiario>
+      <CodigoMunicipio>01059</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>14491.40</ImporteSolicitado>
+      <FechaSolicitud>2026-05-17</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>22222222 J</NifBeneficiario>
+      <NombreBeneficiario>Daniel Muestra Ficticio</NombreBeneficiario>
+      <CodigoMunicipio>01059</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>13765.56</ImporteSolicitado>
+      <FechaSolicitud>2026-04-10</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>25553004G</NifBeneficiario>
+      <NombreBeneficiario>Irene Demostración Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>01059</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>5481.55</ImporteSolicitado>
+      <FechaSolicitud>2026-04-05</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

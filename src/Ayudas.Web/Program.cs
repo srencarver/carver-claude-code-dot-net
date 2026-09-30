@@ -1,5 +1,6 @@
 using Ayudas.Application;
 using Ayudas.Infrastructure;
+using Ayudas.Infrastructure.Externos;
 using Ayudas.Infrastructure.Persistencia;
 using Ayudas.Web.Legacy.Justificaciones;
 using Microsoft.AspNetCore.Mvc.Razor;
@@ -22,6 +23,11 @@ builder.Services.Configure<RazorViewEngineOptions>(opciones =>
 
 builder.Services.AddAplicacion();
 builder.Services.AddInfraestructura(cadenaConexion);
+
+// Cliente del Registro de ayudas (API externa; en local la simula Ayudas.Api).
+builder.Services.AddHttpClient<AyudasApiClient>(cliente =>
+    cliente.BaseAddress = new Uri(builder.Configuration["RegistroAyudas:UrlBase"]
+        ?? throw new InvalidOperationException("Falta RegistroAyudas:UrlBase en appsettings.json.")));
 
 JustificacionesDAL.CadenaConexion = cadenaConexion;
 

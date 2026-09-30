@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="9.8.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2">
@@ -22,6 +23,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Ayudas.Application\Ayudas.Application.csproj" />
     <ProjectReference Include="..\..\src\Ayudas.Domain\Ayudas.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Ayudas.Importacion\Ayudas.Importacion.csproj" />
+    <ProjectReference Include="..\..\src\Ayudas.Infrastructure\Ayudas.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

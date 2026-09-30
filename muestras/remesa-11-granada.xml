@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100011</Referencia>
+    <NifEntidad>P1832200H</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>15111.04</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>22058287E</NifBeneficiario>
+      <NombreBeneficiario>Irene Ficticio Prueba</NombreBeneficiario>
+      <CodigoMunicipio>18087</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>3658.09</ImporteSolicitado>
+      <FechaSolicitud>2026-04-22</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>31181929R</NifBeneficiario>
+      <NombreBeneficiario>Julia Demostración Prueba</NombreBeneficiario>
+      <CodigoMunicipio>18087</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>2915.66</ImporteSolicitado>
+      <FechaSolicitud>2026-06-28</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>64096650C</NifBeneficiario>
+      <NombreBeneficiario>Sergio Ensayo Ficticio</NombreBeneficiario>
+      <CodigoMunicipio>18087</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>8537.29</ImporteSolicitado>
+      <FechaSolicitud>2026-06-07</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100019</Referencia>
+    <NifEntidad>P2435900B</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-09</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>2</NumeroSolicitudes>
+    <ImporteTotal>17333.02</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>82225414T</NifBeneficiario>
+      <NombreBeneficiario>Lucía Simulado Prueba</NombreBeneficiario>
+      <CodigoMunicipio>24089</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>11809.36</ImporteSolicitado>
+      <FechaSolicitud>2026-05-17</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>65033224B</NifBeneficiario>
+      <NombreBeneficiario>Martina Modelo Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>24089</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>5523.66</ImporteSolicitado>
+      <FechaSolicitud>2026-06-08</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

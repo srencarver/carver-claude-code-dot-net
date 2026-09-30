@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100003</Referencia>
+    <NifEntidad>P1424800I</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>26564.09</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>51456395J</NifBeneficiario>
+      <NombreBeneficiario>Adrián Simulado Formación</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>1878.49</ImporteSolicitado>
+      <FechaSolicitud>01/05/2026</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>74727015S</NifBeneficiario>
+      <NombreBeneficiario>Lucía Formación Formación</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>10463.11</ImporteSolicitado>
+      <FechaSolicitud>15/06/2026</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>26500728J</NifBeneficiario>
+      <NombreBeneficiario>Irene Patrón Ficticio</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>14222.49</ImporteSolicitado>
+      <FechaSolicitud>03/07/2026</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

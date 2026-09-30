@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100002</Referencia>
+    <NifEntidad>P2943300J</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>21383.16</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>12.345.678-z</NifBeneficiario>
+      <NombreBeneficiario>Álvaro Ensayo Simulado</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>9313.93</ImporteSolicitado>
+      <FechaSolicitud>2026-04-12</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>87654321-x</NifBeneficiario>
+      <NombreBeneficiario>Sergio Modelo Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>6645.11</ImporteSolicitado>
+      <FechaSolicitud>2026-06-02</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>47956611R</NifBeneficiario>
+      <NombreBeneficiario>Martina Prueba Modelo</NombreBeneficiario>
+      <CodigoMunicipio>29067</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>5424.12</ImporteSolicitado>
+      <FechaSolicitud>2026-05-05</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

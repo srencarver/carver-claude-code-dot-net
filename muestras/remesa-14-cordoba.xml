@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100014</Referencia>
+    <NifEntidad>P1424800I</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>23074.88</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>91866501Q</NifBeneficiario>
+      <NombreBeneficiario>Sergio Modelo Ficticio</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>3610.35</ImporteSolicitado>
+      <FechaSolicitud>2026-4-5</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>49961902Z</NifBeneficiario>
+      <NombreBeneficiario>Paula Ensayo Formación</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>7124.43</ImporteSolicitado>
+      <FechaSolicitud>5/6/2026</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>94349496T</NifBeneficiario>
+      <NombreBeneficiario>Paula Demostración Ensayo</NombreBeneficiario>
+      <CodigoMunicipio>14021</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>12340.10</ImporteSolicitado>
+      <FechaSolicitud>2026-05-01</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

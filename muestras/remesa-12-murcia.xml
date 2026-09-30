@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100012</Referencia>
+    <NifEntidad>P3047000I</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>4</NumeroSolicitudes>
+    <ImporteTotal>37454.51</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>12345678A</NifBeneficiario>
+      <NombreBeneficiario>Irene Simulado Demostración</NombreBeneficiario>
+      <CodigoMunicipio>30030</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>7709.62</ImporteSolicitado>
+      <FechaSolicitud>2026-04-27</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>X1234567L</NifBeneficiario>
+      <NombreBeneficiario>Julia Demostración Demostración</NombreBeneficiario>
+      <CodigoMunicipio>30030</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>12947.51</ImporteSolicitado>
+      <FechaSolicitud>2026-04-14</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>Y7654321G</NifBeneficiario>
+      <NombreBeneficiario>Carmen Prueba Modelo</NombreBeneficiario>
+      <CodigoMunicipio>30030</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>7816.05</ImporteSolicitado>
+      <FechaSolicitud>2026-04-21</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>29690353K</NifBeneficiario>
+      <NombreBeneficiario>Sergio Muestra Simulado</NombreBeneficiario>
+      <CodigoMunicipio>30030</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>8981.33</ImporteSolicitado>
+      <FechaSolicitud>2026-04-13</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

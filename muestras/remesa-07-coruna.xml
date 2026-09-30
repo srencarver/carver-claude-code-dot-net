@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100007</Referencia>
+    <NifEntidad>P1528500J</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>4</NumeroSolicitudes>
+    <ImporteTotal>35819.04</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>64176461K</NifBeneficiario>
+      <NombreBeneficiario>Sergio Modelo Muestra</NombreBeneficiario>
+      <CodigoMunicipio>15030</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>4371.36</ImporteSolicitado>
+      <FechaSolicitud>30/02/2026</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>76582060H</NifBeneficiario>
+      <NombreBeneficiario>Pablo Demostración Muestra</NombreBeneficiario>
+      <CodigoMunicipio>15030</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>9446.26</ImporteSolicitado>
+      <FechaSolicitud>2026-05-12T00:00:00</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>50890526J</NifBeneficiario>
+      <NombreBeneficiario>Adrián Ficticio Ficticio</NombreBeneficiario>
+      <CodigoMunicipio>15030</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>10964.45</ImporteSolicitado>
+      <FechaSolicitud>2026-13-01</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>96487868Q</NifBeneficiario>
+      <NombreBeneficiario>Marcos Muestra Patrón</NombreBeneficiario>
+      <CodigoMunicipio>15030</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>11036.97</ImporteSolicitado>
+      <FechaSolicitud>2026-04-16</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

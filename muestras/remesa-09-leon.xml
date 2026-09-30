@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100009</Referencia>
+    <NifEntidad>P2435900B</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>34201.35</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>38168784P</NifBeneficiario>
+      <NombreBeneficiario></NombreBeneficiario>
+      <CodigoMunicipio>24089</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>8787.49</ImporteSolicitado>
+      <FechaSolicitud>2026-06-20</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>37295901K</NifBeneficiario>
+      <NombreBeneficiario>Hugo Ensayo Prueba</NombreBeneficiario>
+      <CodigoMunicipio>24089</CodigoMunicipio>
+      <ImporteSolicitado>13608.26</ImporteSolicitado>
+      <FechaSolicitud>2026-04-05</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>99406145F</NifBeneficiario>
+      <NombreBeneficiario>Álvaro Muestra Modelo</NombreBeneficiario>
+      <CodigoMunicipio>24089</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>11805.60</ImporteSolicitado>
+      <FechaSolicitud>2026-06-27</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

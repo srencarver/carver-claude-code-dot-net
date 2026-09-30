@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100008</Referencia>
+    <NifEntidad>P0821100E</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>19468.47</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>84275471K</NifBeneficiario>
+      <NombreBeneficiario>Martina Ficticio Simulado</NombreBeneficiario>
+      <CodigoMunicipio>08019</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>10196.60</ImporteSolicitado>
+      <FechaSolicitud>2026-04-26</FechaSolicitud>
+      <Telefono>600000000</Telefono>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>76637515C</NifBeneficiario>
+      <NombreBeneficiario>Hugo Modelo Simulado</NombreBeneficiario>
+      <CodigoMunicipio>8019</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>4095.91</ImporteSolicitado>
+      <FechaSolicitud>2026-04-23</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>58903449N</NifBeneficiario>
+      <NombreBeneficiario>Elena Ensayo Demostración</NombreBeneficiario>
+      <CodigoMunicipio>08019</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>5175.96</ImporteSolicitado>
+      <FechaSolicitud>2026-04-15</FechaSolicitud>
+      <Observaciones>Solicitud presentada en papel</Observaciones>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

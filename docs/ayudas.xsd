@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Contrato de intercambio de remesas de solicitudes de ayuda · versión 1.0
+  Formato que deben usar las entidades locales para enviar sus remesas.
+  Importes con punto decimal y dos decimales. Fechas en formato AAAA-MM-DD.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+  <xs:simpleType name="Nif">
+    <xs:annotation>
+      <xs:documentation>DNI, NIE o NIF de organización: 9 caracteres, mayúsculas, sin separadores.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9XYZ][0-9]{7}[A-Z]|[ABCDEFGHJNPQRSUVW][0-9]{7}[0-9A-J]"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Importe">
+    <xs:restriction base="xs:decimal">
+      <xs:minExclusive value="0"/>
+      <xs:maxInclusive value="60000.00"/>
+      <xs:fractionDigits value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="CodigoMunicipio">
+    <xs:annotation>
+      <xs:documentation>Código INE del municipio: 5 dígitos (2 de provincia y 3 de municipio).</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Texto200">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="Texto300">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="300"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:element name="RemesaAyudas">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Cabecera">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Referencia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="REM-[0-9]{4}-[0-9]{6}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NifEntidad" type="Nif"/>
+              <xs:element name="CodigoConvocatoria">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="CONV-[0-9]{4}-[0-9]{2}"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FechaEnvio" type="xs:date"/>
+              <xs:element name="NumeroSolicitudes" type="xs:positiveInteger"/>
+              <xs:element name="ImporteTotal">
+                <xs:simpleType>
+                  <xs:restriction base="xs:decimal">
+                    <xs:minInclusive value="0"/>
+                    <xs:fractionDigits value="2"/>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Solicitudes">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Solicitud" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="NifBeneficiario" type="Nif"/>
+                    <xs:element name="NombreBeneficiario" type="Texto200"/>
+                    <xs:element name="CodigoMunicipio" type="CodigoMunicipio"/>
+                    <xs:element name="Concepto" type="Texto300"/>
+                    <xs:element name="ImporteSolicitado" type="Importe"/>
+                    <xs:element name="FechaSolicitud" type="xs:date"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required" fixed="1.0"/>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

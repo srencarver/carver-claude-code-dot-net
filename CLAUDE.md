@@ -17,6 +17,8 @@ locales para cada convocatoria. Aplicación de formación: todos los datos son f
 - `Ayudas.Application`: servicios (`Servicios/`), DTOs (`Dtos/`), interfaces de repositorio (`Abstracciones/`) y excepciones de negocio.
 - `Ayudas.Infrastructure`: `AyudasDbContext` (EF Core, SQL Server), configuraciones en `Persistencia/Configuraciones/`, repositorios y datos de prueba (`DatosSemilla`).
 - `Ayudas.Web`: controladores MVC y vistas. `Ayudas.Api`: API REST sobre los mismos servicios.
+- `Ayudas.Importacion`: importación de remesas en fichero. `Lectores/` (uno por formato, `IAyudasLector`) y `Modelos/` (datos en bruto, como llegan).
+- `Ayudas.Infrastructure/Externos/AyudasApiClient`: cliente del Registro de ayudas (API externa). En local la simula `RegistroSimuladoController` de `Ayudas.Api`, que falla una de cada tres peticiones con 503.
 - Flujo normal: controlador → servicio (interfaz `IxxxService`) → repositorio (interfaz `IxxxRepository`) → `AyudasDbContext`.
 
 ## Convenciones
@@ -37,6 +39,11 @@ locales para cada convocatoria. Aplicación de formación: todos los datos son f
 - `EntidadMapeos` (Web) limpia el código de municipio antes de llegar al servicio; el servicio limpia y valida el NIF.
 - La tabla heredada `JUSTIFICACIONES` usa nombres de columna antiguos (`ID_JUSTIF`, `COD_ESTADO`…).
 - Las vistas del módulo heredado están en `Legacy/Justificaciones/Views/` (ruta añadida en `Program.cs`).
+
+## Importación de remesas
+
+- Contrato: `docs/ayudas.xsd` y `docs/especificacion-ayudas.pdf`. Las entidades no siempre lo cumplen.
+- Muestras sintéticas en `muestras/`: son la referencia de lo que llega de verdad.
 
 ## No tocar
 

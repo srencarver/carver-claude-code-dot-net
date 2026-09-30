@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100004</Referencia>
+    <NifEntidad>P0717400F</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>4</NumeroSolicitudes>
+    <ImporteTotal>19872.36</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>41173619P</NifBeneficiario>
+      <NombreBeneficiario>Elena Simulado Prueba</NombreBeneficiario>
+      <CodigoMunicipio>07040</CodigoMunicipio>
+      <Concepto>Digitalización de pyme</Concepto>
+      <ImporteSolicitado>1234,56</ImporteSolicitado>
+      <FechaSolicitud>2026-06-21</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>63688558V</NifBeneficiario>
+      <NombreBeneficiario>Carmen Formación Modelo</NombreBeneficiario>
+      <CodigoMunicipio>07040</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>1.234,56</ImporteSolicitado>
+      <FechaSolicitud>2026-06-27</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>19515028B</NifBeneficiario>
+      <NombreBeneficiario>Álvaro Simulado Ficticio</NombreBeneficiario>
+      <CodigoMunicipio>07040</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>2.500,00 €</ImporteSolicitado>
+      <FechaSolicitud>2026-06-04</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>42632770Q</NifBeneficiario>
+      <NombreBeneficiario>Lucía Demostración Prueba</NombreBeneficiario>
+      <CodigoMunicipio>07040</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>14903.24</ImporteSolicitado>
+      <FechaSolicitud>2026-04-28</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

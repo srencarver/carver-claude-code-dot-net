@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100001</Referencia>
+    <NifEntidad>P2839600J</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>4</NumeroSolicitudes>
+    <ImporteTotal>27173.79</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>58522765R</NifBeneficiario>
+      <NombreBeneficiario>Marcos Formación Ensayo</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>5253.08</ImporteSolicitado>
+      <FechaSolicitud>2026-05-01</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>64964270B</NifBeneficiario>
+      <NombreBeneficiario>Paula Muestra Muestra</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>6720.09</ImporteSolicitado>
+      <FechaSolicitud>2026-05-27</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>54971441S</NifBeneficiario>
+      <NombreBeneficiario>Sofía Patrón Ensayo</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>5121.08</ImporteSolicitado>
+      <FechaSolicitud>2026-06-09</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>12734455E</NifBeneficiario>
+      <NombreBeneficiario>Sofía Patrón Prueba</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>10079.54</ImporteSolicitado>
+      <FechaSolicitud>2026-06-21</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

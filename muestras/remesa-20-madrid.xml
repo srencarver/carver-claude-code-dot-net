@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100020</Referencia>
+    <NifEntidad>P2839600J</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-01</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>10</NumeroSolicitudes>
+    <ImporteTotal>70777.00</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>12581411C</NifBeneficiario>
+      <NombreBeneficiario>Pablo Prueba Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>5097.35</ImporteSolicitado>
+      <FechaSolicitud>2026-05-16</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>14751787R</NifBeneficiario>
+      <NombreBeneficiario>Marcos Ejemplo Muestra</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Accesibilidad en edificio</Concepto>
+      <ImporteSolicitado>10333.37</ImporteSolicitado>
+      <FechaSolicitud>2026-05-21</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>60063280E</NifBeneficiario>
+      <NombreBeneficiario>Carmen Muestra Ensayo</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>13981.73</ImporteSolicitado>
+      <FechaSolicitud>2026-04-14</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>10396083Z</NifBeneficiario>
+      <NombreBeneficiario>Julia Demostración Ejemplo</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>4968.30</ImporteSolicitado>
+      <FechaSolicitud>2026-06-20</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>98744843R</NifBeneficiario>
+      <NombreBeneficiario>Sofía Prueba Patrón</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>11155.11</ImporteSolicitado>
+      <FechaSolicitud>2026-04-20</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>41527655M</NifBeneficiario>
+      <NombreBeneficiario>Elena Ensayo Prueba</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>1722.36</ImporteSolicitado>
+      <FechaSolicitud>2026-05-24</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>51538485Q</NifBeneficiario>
+      <NombreBeneficiario>Carmen Simulado Muestra</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Eficiencia energética</Concepto>
+      <ImporteSolicitado>1350.04</ImporteSolicitado>
+      <FechaSolicitud>2026-06-10</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>29665135B</NifBeneficiario>
+      <NombreBeneficiario>Paula Simulado Simulado</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>5661.38</ImporteSolicitado>
+      <FechaSolicitud>2026-04-16</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>16932610X</NifBeneficiario>
+      <NombreBeneficiario>Adrián Muestra Ensayo</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Comercio de proximidad</Concepto>
+      <ImporteSolicitado>11423.68</ImporteSolicitado>
+      <FechaSolicitud>2026-04-24</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>48436276R</NifBeneficiario>
+      <NombreBeneficiario>Hugo Simulado Demostración</NombreBeneficiario>
+      <CodigoMunicipio>28079</CodigoMunicipio>
+      <Concepto>Rehabilitación de vivienda</Concepto>
+      <ImporteSolicitado>5083.68</ImporteSolicitado>
+      <FechaSolicitud>2026-05-03</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>

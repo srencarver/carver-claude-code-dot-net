@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Ayudas.Importacion</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ayudas.Application\Ayudas.Application.csproj" />
+    <ProjectReference Include="..\Ayudas.Domain\Ayudas.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

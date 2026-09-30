@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RemesaAyudas version="1.0">
+  <Cabecera>
+    <Referencia>REM-2026-100005</Referencia>
+    <NifEntidad>P0313700G</NifEntidad>
+    <CodigoConvocatoria>CONV-2026-02</CodigoConvocatoria>
+    <FechaEnvio>2026-07-01</FechaEnvio>
+    <NumeroSolicitudes>3</NumeroSolicitudes>
+    <ImporteTotal>26576.73</ImporteTotal>
+  </Cabecera>
+  <Solicitudes>
+    <Solicitud>
+      <NifBeneficiario>62705186X</NifBeneficiario>
+      <NombreBeneficiario>María José Ñúñez Prueba</NombreBeneficiario>
+      <CodigoMunicipio>03014</CodigoMunicipio>
+      <Concepto>Rehabilitación de fachada y cubierta</Concepto>
+      <ImporteSolicitado>12707.76</ImporteSolicitado>
+      <FechaSolicitud>2026-04-08</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>80518438S</NifBeneficiario>
+      <NombreBeneficiario>Óscar Güell Ensayo</NombreBeneficiario>
+      <CodigoMunicipio>03014</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>3587.79</ImporteSolicitado>
+      <FechaSolicitud>2026-05-13</FechaSolicitud>
+    </Solicitud>
+    <Solicitud>
+      <NifBeneficiario>64625554Q</NifBeneficiario>
+      <NombreBeneficiario>Hugo Demostración Formación</NombreBeneficiario>
+      <CodigoMunicipio>03014</CodigoMunicipio>
+      <Concepto>Empleo juvenil</Concepto>
+      <ImporteSolicitado>10281.18</ImporteSolicitado>
+      <FechaSolicitud>2026-05-09</FechaSolicitud>
+    </Solicitud>
+  </Solicitudes>
+</RemesaAyudas>
