@@ -42,6 +42,28 @@ public class RemesaServiceTests
     }
 
     [Fact]
+    public void CalcularCofinanciacion_RedondeoPorLineaYSobreTotalDistintos_RedondeaSobreElTotal()
+    {
+        // Por línea: 10,01 × 0,75 = 7,5075 → 7,51 (× 3 = 22,53). Sobre el total: 30,03 × 0,75 = 22,5225 → 22,52.
+        var remesa = Datos.Remesa(1, Datos.Entidad(), Datos.Convocatoria(0.75m), 10.01m, 10.01m, 10.01m);
+
+        var cofinanciado = _servicio.CalcularCofinanciacion(remesa);
+
+        Assert.Equal(22.52m, cofinanciado);
+    }
+
+    [Fact]
+    public void CalcularCofinanciacion_MedioCentimo_RedondeaHaciaArriba()
+    {
+        // 0,10 × 0,85 = 0,085 → 0,09 (el redondeo bancario daría 0,08).
+        var remesa = Datos.Remesa(1, Datos.Entidad(), Datos.Convocatoria(0.85m), 0.10m);
+
+        var cofinanciado = _servicio.CalcularCofinanciacion(remesa);
+
+        Assert.Equal(0.09m, cofinanciado);
+    }
+
+    [Fact]
     public async Task ObtenerDetalleAsync_RemesaInexistente_DevuelveNull()
     {
         var detalle = await _servicio.ObtenerDetalleAsync(42);

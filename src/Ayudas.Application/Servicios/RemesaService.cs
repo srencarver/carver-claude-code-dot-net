@@ -66,19 +66,14 @@ public class RemesaService : IRemesaService
     }
 
     /// <summary>
-    /// Importe que cofinancia el Estado: porcentaje de la convocatoria sobre lo concedido.
+    /// Importe que cofinancia el Estado: porcentaje de la convocatoria sobre el total concedido,
+    /// redondeado una sola vez a céntimos. El medio céntimo se redondea hacia arriba (comercial).
     /// </summary>
     public decimal CalcularCofinanciacion(Remesa remesa)
     {
-        decimal total = 0;
+        var totalConcedido = remesa.Ayudas.Sum(a => a.ImporteConcedido);
 
-        foreach (var ayuda in remesa.Ayudas)
-        {
-            // Se redondea cada línea a céntimos y se suman los redondeos.
-            total += Math.Round(ayuda.ImporteConcedido * remesa.Convocatoria.PorcentajeCofinanciacion, 2);
-        }
-
-        return total;
+        return Math.Round(totalConcedido * remesa.Convocatoria.PorcentajeCofinanciacion, 2, MidpointRounding.AwayFromZero);
     }
 
     private static string? FormatearDireccion(string? direccion)
