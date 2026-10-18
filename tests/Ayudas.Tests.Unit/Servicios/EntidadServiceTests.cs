@@ -47,14 +47,45 @@ public class EntidadServiceTests
     }
 
     [Fact]
-    public async Task ActualizarAsync_DireccionEnBlanco_SeGuardaComoNula()
+    public async Task ActualizarAsync_InactivaConDireccionEnBlanco_SeGuardaComoNula()
     {
         var datos = DatosEdicion();
+        datos.Activa = false;
         datos.DireccionNotificacion = "   ";
 
         await _servicio.ActualizarAsync(datos);
 
         Assert.Null(_repositorio.Entidades[0].DireccionNotificacion);
+        Assert.Equal(1, _repositorio.Guardados);
+    }
+
+    [Theory]
+    [InlineData(null)]
+    [InlineData("")]
+    [InlineData("   ")]
+    public async Task ActualizarAsync_ActivaSinDireccion_LanzaValidacionEnLaDireccion(string? direccion)
+    {
+        var datos = DatosEdicion();
+        datos.DireccionNotificacion = direccion;
+
+        var error = await Assert.ThrowsAsync<ValidacionException>(() => _servicio.ActualizarAsync(datos));
+
+        Assert.Equal(nameof(EntidadEdicionDto.DireccionNotificacion), error.Campo);
+        Assert.Equal("La dirección de notificación es obligatoria para entidades activas.", error.Message);
+        Assert.Equal(0, _repositorio.Guardados);
+    }
+
+    [Fact]
+    public async Task ActualizarAsync_InactivaSinDireccion_SeGuarda()
+    {
+        var datos = DatosEdicion();
+        datos.Activa = false;
+        datos.DireccionNotificacion = null;
+
+        await _servicio.ActualizarAsync(datos);
+
+        Assert.Null(_repositorio.Entidades[0].DireccionNotificacion);
+        Assert.Equal(1, _repositorio.Guardados);
     }
 
     private static EntidadEdicionDto DatosEdicion(int id = 1, string nif = "P2807900B") => new()

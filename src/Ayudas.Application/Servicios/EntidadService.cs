@@ -77,6 +77,11 @@ public class EntidadService : IEntidadService
             throw new ValidacionException(nameof(datos.CodigoMunicipio), "El código de municipio debe tener 5 dígitos (código INE).");
         }
 
+        if (datos.Activa && string.IsNullOrWhiteSpace(datos.DireccionNotificacion))
+        {
+            throw new ValidacionException(nameof(datos.DireccionNotificacion), "La dirección de notificación es obligatoria para entidades activas.");
+        }
+
         entidad.Nif = nif;
         entidad.Nombre = datos.Nombre.Trim();
         entidad.Tipo = datos.Tipo;
