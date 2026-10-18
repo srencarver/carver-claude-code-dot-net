@@ -16,5 +16,18 @@
       "Read(./**/appsettings.Production.json)",
       "Edit(./**/appsettings.Production.json)"
     ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"$CLAUDE_PROJECT_DIR/.claude/hooks/proteger-legacy.ps1\""
+          }
+        ]
+      }
+    ]
   }
 }
