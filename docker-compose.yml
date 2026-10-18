@@ -1,0 +1,52 @@
+# Sesión 4: la web y SQL Server en contenedores, y un contenedor de desarrollo con Claude Code.
+#   docker compose up -d --build      web (http://localhost:8080) + db
+#   docker compose run --rm dev bash  contenedor de desarrollo (solo ve /workspace)
+#   docker compose down -v            borrar contenedores, red y volúmenes
+# LocalDB no existe en Linux: aquí la base de datos es SQL Server con el usuario sa y una
+# contraseña de formación (no es un secreto). Cámbiala con la variable SA_PASSWORD si quieres.
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "${SA_PASSWORD:-Formacion.2026}"
+    ports:
+      - "14333:1433"
+    healthcheck:
+      # En imágenes antiguas la ruta es /opt/mssql-tools/bin/sqlcmd (sin -C).
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$${MSSQL_SA_PASSWORD}\" -C -Q \"SELECT 1\" || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  web:
+    build: .
+    environment:
+      # Development: no carga el appsettings.Production.json ficticio que va dentro de la imagen.
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Ayudas: "Server=db;Database=AyudasFormacion;User Id=sa;Password=${SA_PASSWORD:-Formacion.2026};TrustServerCertificate=True;MultipleActiveResultSets=true"
+    ports:
+      - "8080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  dev:
+    profiles: ["dev"]            # no arranca con "up"; se usa con "docker compose run --rm dev bash"
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+    command: sleep infinity      # para VS Code; con "run ... bash" se sustituye
+    working_dir: /workspace
+    volumes:
+      - .:/workspace
+      - claude-config:/home/app/.claude-config
+    environment:
+      CLAUDE_CONFIG_DIR: /home/app/.claude-config
+      ConnectionStrings__Ayudas: "Server=db;Database=AyudasFormacion;User Id=sa;Password=${SA_PASSWORD:-Formacion.2026};TrustServerCertificate=True;MultipleActiveResultSets=true"
+    depends_on:
+      - db
+
+volumes:
+  claude-config:

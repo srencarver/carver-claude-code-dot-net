@@ -10,7 +10,7 @@ Todos los datos son ficticios.
 - SDK de .NET 8.
 - SQL Server Express LocalDB (se instala con Visual Studio 2022, carga de trabajo «Almacenamiento y procesamiento de datos»).
 - Visual Studio 2022 o VS Code, y Claude Code.
-- Sesión 4: Node.js 18 o superior (servidor MCP de Playwright) y Docker.
+- Sesión 4: Node.js 18 o superior (servidor MCP de Playwright), PowerShell 7 (`winget install Microsoft.PowerShell`, para descargar Chromium) y Docker.
 
 ## Primer arranque
 

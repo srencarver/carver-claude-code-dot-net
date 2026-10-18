@@ -45,6 +45,20 @@ locales para cada convocatoria. Aplicación de formación: todos los datos son f
 - Contrato: `docs/ayudas.xsd` y `docs/especificacion-ayudas.pdf`. Las entidades no siempre lo cumplen.
 - Muestras sintéticas en `muestras/`: son la referencia de lo que llega de verdad.
 
+## Pruebas de interfaz (E2E)
+
+- `tests/Ayudas.Tests.E2E`: Playwright con xUnit. No está en `Ayudas.sln`: `dotnet test` de la solución no lo ejecuta.
+- Necesita Chromium (`.\scripts\instalar-playwright.ps1`, una vez) y la web levantada.
+- `dotnet test tests/Ayudas.Tests.E2E`; la URL va en la variable `AYUDAS_URL` (por defecto http://localhost:5080).
+- Las pruebas heredan de `PruebaE2E`. Selectores por rol o etiqueta, sin esperas fijas.
+
+## Docker
+
+- `docker compose up -d --build`: web en http://localhost:8080 y SQL Server en contenedor.
+- `docker compose run --rm dev bash`: contenedor de desarrollo con .NET 8 y Claude Code (usuario `app`, solo ve `/workspace`).
+- En el Compose la cadena de conexión llega por la variable `ConnectionStrings__Ayudas`, con `Server=db` (nombre del servicio).
+- Compilar en Windows y en el contenedor sobre la misma carpeta mezcla `obj/`: si Visual Studio se queja, `dotnet restore`.
+
 ## No tocar
 
 - `src/Ayudas.Web/Legacy/`: módulo heredado sin mantenimiento. Se puede leer y documentar, no modificar.

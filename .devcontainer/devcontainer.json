@@ -1,0 +1,10 @@
+{
+  // Para VS Code ("Reopen in Container"). Visual Studio 2022 no abre dev containers:
+  // en ese caso, docker compose run --rm dev bash.
+  "name": "Ayudas · Claude Code",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "dev",
+  "runServices": ["db", "dev"],
+  "workspaceFolder": "/workspace",
+  "remoteUser": "app"
+}
