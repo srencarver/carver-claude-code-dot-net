@@ -8,6 +8,9 @@ public class RemesaService : IRemesaService
 {
     public const int TamanoPagina = 10;
 
+    /// <summary>Importe concedido a partir del cual una ayuda va a fiscalización previa.</summary>
+    public const decimal UmbralFiscalizacionPrevia = 10_000m;
+
     private readonly IRemesaRepository _remesas;
 
     public RemesaService(IRemesaRepository remesas)
@@ -49,7 +52,8 @@ public class RemesaService : IRemesaService
                     Concepto = a.Concepto,
                     ImporteSolicitado = a.ImporteSolicitado,
                     ImporteConcedido = a.ImporteConcedido,
-                    FechaSolicitud = a.FechaSolicitud
+                    FechaSolicitud = a.FechaSolicitud,
+                    RequiereFiscalizacion = a.ImporteConcedido >= UmbralFiscalizacionPrevia
                 })
                 .ToList()
         };

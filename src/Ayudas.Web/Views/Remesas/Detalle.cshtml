@@ -31,6 +31,7 @@
             <th>Concepto</th>
             <th class="num">Solicitado</th>
             <th class="num">Concedido</th>
+            <th>Fiscalización</th>
         </tr>
     </thead>
     <tbody>
@@ -43,6 +44,7 @@
                 <td>@a.Concepto</td>
                 <td class="num">@a.ImporteSolicitado.ToString("N2")</td>
                 <td class="num">@a.ImporteConcedido.ToString("N2")</td>
+                <td>@if (a.RequiereFiscalizacion) { <span class="aviso">Fiscalización previa</span> }</td>
             </tr>
         }
     </tbody>

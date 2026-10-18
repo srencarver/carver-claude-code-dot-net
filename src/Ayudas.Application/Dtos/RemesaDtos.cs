@@ -47,4 +47,6 @@ public class AyudaDetalleDto
     public decimal ImporteSolicitado { get; set; }
     public decimal ImporteConcedido { get; set; }
     public DateOnly FechaSolicitud { get; set; }
+    /// <summary>Ayuda con importe concedido igual o superior al umbral de fiscalización previa.</summary>
+    public bool RequiereFiscalizacion { get; set; }
 }

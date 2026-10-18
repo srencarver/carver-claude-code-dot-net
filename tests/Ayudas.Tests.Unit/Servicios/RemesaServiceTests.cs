@@ -63,6 +63,36 @@ public class RemesaServiceTests
         Assert.Equal(0.09m, cofinanciado);
     }
 
+    [Theory]
+    [InlineData("10000.00", true)]
+    [InlineData("10000.01", true)]
+    [InlineData("9999.99", false)]
+    [InlineData("0", false)]
+    public async Task ObtenerDetalleAsync_ImporteConcedido_MarcaFiscalizacionPreviaDesdeElUmbral(string importe, bool esperado)
+    {
+        var concedido = decimal.Parse(importe, System.Globalization.CultureInfo.InvariantCulture);
+        _repositorio.Remesas.Add(Datos.Remesa(1, Datos.Entidad(), Datos.Convocatoria(), concedido));
+
+        var detalle = await _servicio.ObtenerDetalleAsync(1);
+
+        Assert.NotNull(detalle);
+        Assert.Equal(esperado, Assert.Single(detalle.Ayudas).RequiereFiscalizacion);
+    }
+
+    [Fact]
+    public async Task ObtenerDetalleAsync_RemesaRechazada_NingunaAyudaVaAFiscalizacion()
+    {
+        var remesa = Datos.Remesa(1, Datos.Entidad(), Datos.Convocatoria(), 12_000m);
+        remesa.Estado = Domain.Entidades.EstadoRemesa.Rechazada;
+        remesa.Ayudas[0].ImporteConcedido = 0m;     // las rechazadas tienen concedido 0
+        _repositorio.Remesas.Add(remesa);
+
+        var detalle = await _servicio.ObtenerDetalleAsync(1);
+
+        Assert.NotNull(detalle);
+        Assert.False(detalle.Ayudas[0].RequiereFiscalizacion);
+    }
+
     [Fact]
     public async Task ObtenerDetalleAsync_RemesaInexistente_DevuelveNull()
     {
