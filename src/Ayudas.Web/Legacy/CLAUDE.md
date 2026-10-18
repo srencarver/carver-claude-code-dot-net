@@ -1,0 +1,1 @@
+- No se modifica: solo se lee.
