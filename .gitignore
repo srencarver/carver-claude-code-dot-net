@@ -427,3 +427,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Curso: secretos locales, nunca en el repositorio
+secrets/

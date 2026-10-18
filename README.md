@@ -10,6 +10,7 @@ Todos los datos son ficticios.
 - SDK de .NET 8.
 - SQL Server Express LocalDB (se instala con Visual Studio 2022, carga de trabajo «Almacenamiento y procesamiento de datos»).
 - Visual Studio 2022 o VS Code, y Claude Code.
+- Sesión 4: Node.js 18 o superior (servidor MCP de Playwright) y Docker.
 
 ## Primer arranque
 
@@ -35,7 +36,16 @@ dotnet test
 
 ## Ramas del curso
 
-Cada sesión empieza en su rama: `main` para la sesión 1 y `s2-inicio` … `s6-inicio` para las siguientes.
+El curso tiene cinco sesiones de 3 h. Cada sesión empieza en su rama: `main` para la sesión 1 y
+`s2-inicio` … `s5-inicio` para las siguientes. Cada rama trae la solución de la sesión anterior.
+
+| Sesión | Rama | Bloques |
+|---|---|---|
+| 1 | `main` | 01 Flujo de trabajo · 02 CLAUDE.md y memoria |
+| 2 | `s2-inicio` | 02 Permisos y datos sensibles · 03 Contexto y tokens · 04 Comandos |
+| 3 | `s3-inicio` | 04 Skills, subagentes y hooks · 05 Especificación, plan y pruebas |
+| 4 | `s4-inicio` | 05 Playwright, diff y Git · 06 Docker |
+| 5 | `s5-inicio` | 07 Taller integrador |
 
 ```powershell
 # Al empezar una sesión (cambia de rama, actualiza y recrea la base de datos)

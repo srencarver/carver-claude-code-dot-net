@@ -6,7 +6,7 @@
 #>
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateRange(1, 6)]
+    [ValidateRange(1, 5)]
     [int] $Sesion
 )
 
