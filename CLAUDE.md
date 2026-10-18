@@ -59,6 +59,11 @@ locales para cada convocatoria. Aplicación de formación: todos los datos son f
 - En el Compose la cadena de conexión llega por la variable `ConnectionStrings__Ayudas`, con `Server=db` (nombre del servicio).
 - Compilar en Windows y en el contenedor sobre la misma carpeta mezcla `obj/`: si Visual Studio se queja, `dotnet restore`.
 
+## Especificaciones
+
+- Los cambios medianos o grandes empiezan por una especificación breve en `specs/NNN-nombre.md`, con la plantilla `specs/_plantilla.md`.
+- Cada criterio de aceptación tiene su prueba.
+
 ## No tocar
 
 - `src/Ayudas.Web/Legacy/`: módulo heredado sin mantenimiento. Se puede leer y documentar, no modificar.

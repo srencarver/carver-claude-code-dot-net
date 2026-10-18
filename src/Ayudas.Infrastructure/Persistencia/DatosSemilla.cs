@@ -183,6 +183,54 @@ public static class DatosSemilla
                 });
             }
         }
+
+        db.Remesas.AddRange(RemesasPendientesDelTaller(entidades, convocatorias));
+    }
+
+    /// <summary>
+    /// Taller de la sesión 5 (bonificación por cumplimiento): remesas pendientes de entidades que ya
+    /// tienen remesas pagadas. Granada y Córdoba tienen 4 pagadas; Murcia, exactamente 3 (caso límite).
+    /// Importes fijos para que los criterios de aceptación se puedan comprobar a mano.
+    /// </summary>
+    private static IEnumerable<Remesa> RemesasPendientesDelTaller(List<EntidadLocal> entidades, List<Convocatoria> convocatorias)
+    {
+        var pendientes = new[]
+        {
+            (Entidad: entidades[6], Convocatoria: convocatorias[1], Estado: EstadoRemesa.Recibida, Dia: 1),      // Granada · CONV-2026-01 (80 %)
+            (Entidad: entidades[4], Convocatoria: convocatorias[2], Estado: EstadoRemesa.EnValidacion, Dia: 2),  // Córdoba · CONV-2026-02 (70 %)
+            (Entidad: entidades[10], Convocatoria: convocatorias[1], Estado: EstadoRemesa.Recibida, Dia: 3)      // Murcia · CONV-2026-01 (80 %)
+        };
+
+        var numero = 0;
+        foreach (var p in pendientes)
+        {
+            numero++;
+            var fechaEnvio = new DateTime(2026, 10, p.Dia, 9, 30, 0);
+            var remesa = new Remesa
+            {
+                Referencia = $"REM-2026-9{numero:D5}",
+                EntidadLocal = p.Entidad,
+                Convocatoria = p.Convocatoria,
+                FechaEnvio = fechaEnvio,
+                Estado = p.Estado
+            };
+
+            foreach (var (solicitado, concedido, dni) in new[] { (5000.00m, 4500.00m, 30000001 + numero), (3500.00m, 3150.00m, 30000101 + numero) })
+            {
+                remesa.Ayudas.Add(new Ayuda
+                {
+                    NifBeneficiario = dni.ToString("D8") + Nif.LetraDni(dni),
+                    NombreBeneficiario = $"Beneficiaria Taller {numero}",
+                    CodigoMunicipio = p.Entidad.CodigoMunicipio,
+                    Concepto = "Eficiencia energética",
+                    ImporteSolicitado = solicitado,
+                    ImporteConcedido = concedido,
+                    FechaSolicitud = new DateOnly(2026, 9, 15)
+                });
+            }
+
+            yield return remesa;
+        }
     }
 
     private static string GenerarDni(Random aleatorio)
