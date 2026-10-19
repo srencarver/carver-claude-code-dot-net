@@ -30,7 +30,7 @@ public class RemesaService : IRemesaService
             EntidadId = remesa.EntidadLocalId,
             EntidadNombre = remesa.EntidadLocal.Nombre,
             EntidadNif = remesa.EntidadLocal.Nif,
-            DireccionNotificacion = FormatearDireccion(remesa.EntidadLocal.DireccionNotificacion!),
+            DireccionNotificacion = FormatearDireccion(remesa.EntidadLocal.DireccionNotificacion),
             ConvocatoriaCodigo = remesa.Convocatoria.Codigo,
             ConvocatoriaTitulo = remesa.Convocatoria.Titulo,
             PorcentajeCofinanciacion = remesa.Convocatoria.PorcentajeCofinanciacion,
@@ -69,8 +69,14 @@ public class RemesaService : IRemesaService
         return total;
     }
 
-    private static string FormatearDireccion(string direccion)
+    private static string FormatearDireccion(string? direccion)
     {
+        // Las entidades pueden no tener dirección de notificación.
+        if (string.IsNullOrWhiteSpace(direccion))
+        {
+            return string.Empty;
+        }
+
         // Las direcciones llegan de las entidades con espacios de más.
         return string.Join(' ', direccion.Trim().Split(' ', StringSplitOptions.RemoveEmptyEntries));
     }

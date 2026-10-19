@@ -28,6 +28,17 @@ public class RemesaServiceTests
     }
 
     [Fact]
+    public async Task ObtenerDetalleAsync_EntidadSinDireccion_DevuelveDireccionVacia()
+    {
+        _repositorio.Remesas.Add(Datos.Remesa(1, Datos.Entidad(direccion: null), Datos.Convocatoria(0.80m), 100m));
+
+        var detalle = await _servicio.ObtenerDetalleAsync(1);
+
+        Assert.NotNull(detalle);
+        Assert.Equal(string.Empty, detalle.DireccionNotificacion);
+    }
+
+    [Fact]
     public async Task ObtenerDetalleAsync_RemesaInexistente_DevuelveNull()
     {
         var detalle = await _servicio.ObtenerDetalleAsync(42);
