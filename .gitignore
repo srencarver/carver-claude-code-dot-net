@@ -148,7 +148,7 @@ ipch/
 *.sap
 
 # Visual Studio Trace Files
-*.e2e
+/*.e2e
 
 # TFS 2012 Local Workspace
 $tf/
@@ -430,3 +430,7 @@ FodyWeavers.xsd
 
 # Curso: secretos locales, nunca en el repositorio
 secrets/
+
+# Claude Code: configuracion personal y registros del MCP de Playwright
+.claude/settings.local.json
+.playwright-mcp/
